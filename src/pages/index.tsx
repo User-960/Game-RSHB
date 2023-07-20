@@ -1,7 +1,7 @@
 import Home from '@/components/screens/home/Home'
 
 const HomePage = () => {
-  return <Home/>
+	return <Home />
 }
 
 export default HomePage
