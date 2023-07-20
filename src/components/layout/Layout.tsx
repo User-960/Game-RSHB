@@ -1,7 +1,8 @@
 import cn from 'clsx'
-import { FC, ReactNode } from 'react'
+import { FC, Fragment, ReactNode } from 'react'
 
 import styles from './Layout.module.scss'
+import Header from './header/Header'
 
 interface ILayoutProps {
 	bgImage?: any
@@ -13,20 +14,16 @@ interface ILayoutProps {
 }
 
 const Layout: FC<ILayoutProps> = ({
-	bgImage = '',
 	heading = '',
 	backLink = '/',
 	children
 }) => {
 	return (
-		<section
-			className={cn(styles.wrapper, { [styles.otherPage]: !!heading })}
-			style={{ backgroundImage: `url(${bgImage})` }}
-		>
-			{/* <Header backLink={backLink} /> */}
+		<section className={cn(styles.wrapper, { [styles.otherPage]: !!heading })}>
+			<Header backLink={backLink} />
 			<main>
 				{heading && <h1 className={styles.heading}>{heading}</h1>}
-				{children && <div>{children}</div>}
+				{children && <Fragment>{children}</Fragment>}
 			</main>
 		</section>
 	)

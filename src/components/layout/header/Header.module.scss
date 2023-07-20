@@ -1,0 +1,15 @@
+@import 'src/assets/styles/variables';
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	> button {
+		color: $font-white;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		cursor: pointer;
+	}
+}
