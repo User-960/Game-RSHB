@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import Button from '@/components/ui/button/Button'
+
 import Layout from '@/components/layout/Layout'
 import { IMeta } from '@/components/seo/meta.interface'
 
@@ -11,7 +13,7 @@ const Home: FC = () => {
 
 	return (
 		<Layout meta={meta}>
-			<h1>Home</h1>
+			<Button>Home</Button>
 		</Layout>
 	)
 }
