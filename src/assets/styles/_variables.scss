@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+$desktop: 1024px;
+$mobile: 480px;
+
+$default-font: 'Sofia Sans', sans-serif;
+
+$accent-green: #34b565;
+$accent-black: #1c1c1c;
+$accent-grey: #535353;
+
+$dark-accent-green: darken($accent-green, 20%);
+$hard-dark-accent-green: darken($accent-green, 30%);
+
+$bx-accent-green: 0 4px 4px rgba($accent-green, 0.25);
+$bx-16: 0 3px 6px rgba(0, 0, 0, 0.16);
