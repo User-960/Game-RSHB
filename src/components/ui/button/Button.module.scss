@@ -1,27 +1,25 @@
 @import 'src/assets/styles/variables';
 
+.wrapper {
+	text-align: center;
+}
+
 .button {
 	border: none;
 	outline: none;
-	border-radius: 10px;
-
-	font-size: 20px;
-	padding: 13px 48px;
-
+	border-radius: 12px;
+	width: 44px;
+	height: 44px;
+	border-radius: 12px;
+	border: none;
+	outline: none;
 	cursor: pointer;
-	color: #fff;
-	background-color: $dark-accent-green;
-	transition: background-color 0.15s ease;
-	@media (max-width: $mobile) {
-		font-size: 16px;
-		padding: 12px 38px;
-	}
+	background-color: transparent;
+	transition: color 0.3s ease;
+
+	color: #bfc6dc;
 
 	&:hover {
-		background-color: rgba($accent-green, 0.7);
+		color: #89e159;
 	}
-}
-
-.wrapper {
-	text-align: center;
 }
