@@ -15,9 +15,15 @@ const MenuBar: FC = () => {
 			</div>
 
 			<div className={styles.social}>
-				<GlobalSvgSelector id='vk' />
-				<GlobalSvgSelector id='telegram' />
-				<GlobalSvgSelector id='email' />
+				<button>
+					<GlobalSvgSelector id='vk' />
+				</button>
+				<button>
+					<GlobalSvgSelector id='telegram' />
+				</button>
+				<button>
+					<GlobalSvgSelector id='email' />
+				</button>
 			</div>
 
 			<button className={styles.button}>Выйти</button>
