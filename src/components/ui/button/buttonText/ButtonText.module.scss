@@ -1,0 +1,25 @@
+@import 'src/assets/styles/variables';
+
+.wrapper {
+	text-align: center;
+}
+
+.button {
+	border: none;
+	outline: none;
+	border-radius: 12px;
+	width: 44px;
+	height: 44px;
+	border-radius: 12px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: transparent;
+	transition: color 0.3s ease;
+
+	color: #bfc6dc;
+
+	&:hover {
+		color: #89e159;
+	}
+}

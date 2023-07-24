@@ -27,7 +27,7 @@ export const GlobalSvgSelector = ({ id }: Props) => {
 						height='42'
 						rx='11'
 						stroke='currentColor'
-						stroke-width='2'
+						strokeWidth='2'
 					/>
 				</svg>
 			)

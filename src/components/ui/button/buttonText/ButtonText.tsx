@@ -1,15 +1,15 @@
 import cn from 'clsx'
 import { FC, ReactNode } from 'react'
 
-import styles from './Button.module.scss'
+import styles from './ButtonText.module.scss'
 
-interface IButtonProps {
+interface IButtonTextProps {
 	clickHandler?: any
 	size?: string
 	children?: ReactNode
 }
 
-const Button: FC<IButtonProps> = ({
+const ButtonText: FC<IButtonTextProps> = ({
 	clickHandler = null,
 	size = '',
 	children
@@ -26,4 +26,4 @@ const Button: FC<IButtonProps> = ({
 	)
 }
 
-export default Button
+export default ButtonText

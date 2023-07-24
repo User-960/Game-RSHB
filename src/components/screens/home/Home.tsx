@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import Button from '@/components/ui/button/Button'
+import ButtonIcon from '@/components/ui/button/buttonIcon/ButtonIcon'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
 
 import Layout from '@/components/layout/Layout'
@@ -14,9 +14,9 @@ const Home: FC = () => {
 
 	return (
 		<Layout meta={meta}>
-			<Button>
+			<ButtonIcon>
 				<GlobalSvgSelector id='settings' />
-			</Button>
+			</ButtonIcon>
 		</Layout>
 	)
 }
