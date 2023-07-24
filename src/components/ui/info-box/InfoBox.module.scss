@@ -1,0 +1,55 @@
+@import 'src/assets/styles/variables';
+
+.wrapper {
+	padding: 20px;
+	border-radius: 20px;
+	background: #1f2431;
+
+	> p {
+		color: $font-grey;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 24px;
+	}
+
+	display: flex;
+	flex-direction: column;
+
+	> .button {
+		width: 90px;
+		height: 40px;
+		margin-top: 20px;
+		padding: 8px 20px;
+		border-radius: 8px;
+		border: 2px solid $accent-green;
+		color: $accent-green;
+		background-color: transparent;
+		cursor: pointer;
+		align-self: flex-end;
+		outline: none;
+
+		transition: color 0.3s ease;
+	}
+
+	> .button:hover {
+		color: #fff;
+		outline: 2px solid $accent-green;
+		box-shadow: 0px 0px 8px 4px $accent-green;
+	}
+}
+
+.small {
+	width: 460px;
+	height: 115px;
+}
+
+.medium {
+	width: 460px;
+	height: 140px;
+}
+
+.large {
+	width: 710px;
+	height: 230px;
+}
