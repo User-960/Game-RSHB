@@ -8,18 +8,45 @@
 	border: none;
 	outline: none;
 	border-radius: 12px;
-	width: 44px;
-	height: 44px;
 	border-radius: 12px;
 	border: none;
 	outline: none;
 	cursor: pointer;
 	background-color: transparent;
-	transition: color 0.3s ease;
+
+	height: 84px;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	border-radius: 16px;
+	background: rgba(20, 27, 37, 0.8);
 
 	color: #bfc6dc;
 
+	transition: color 0.3s ease;
+
 	&:hover {
 		color: #89e159;
+		outline: 2px solid #89e159;
+		box-shadow: 0px 0px 8px 4px #89e159;
 	}
+
+	> span {
+		margin-left: 16px;
+		font-size: 20px;
+		line-height: 48px;
+		font-weight: 400;
+	}
+}
+
+.small {
+	width: 150px;
+}
+
+.medium {
+	width: 180px;
+}
+
+.large {
+	width: 210px;
 }

@@ -5,13 +5,15 @@ import styles from './ButtonIcon.module.scss'
 
 interface IButtonIconProps {
 	clickHandler?: any
-	size?: string
+	size: string
+	name: string
 	children?: ReactNode
 }
 
 const ButtonIcon: FC<IButtonIconProps> = ({
 	clickHandler = null,
-	size = '',
+	size,
+	name,
 	children
 }) => {
 	return (
@@ -21,6 +23,7 @@ const ButtonIcon: FC<IButtonIconProps> = ({
 				onClick={clickHandler}
 			>
 				{children}
+				<span>{name}</span>
 			</button>
 		</div>
 	)

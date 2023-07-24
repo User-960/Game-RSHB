@@ -58,10 +58,12 @@ body {
 }
 
 body {
-	background-color: $accent-black;
+	// background-color: $accent-black;
+	background-color: var(--3, #8990a5);
 	padding: 0;
 	margin: 0;
 	color: $font-white;
+	font-family: $default-font;
 	font-size: 20px;
 	min-width: 320px;
 	position: relative;

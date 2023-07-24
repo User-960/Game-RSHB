@@ -14,8 +14,8 @@ const Home: FC = () => {
 
 	return (
 		<Layout meta={meta}>
-			<ButtonIcon>
-				<GlobalSvgSelector id='settings' />
+			<ButtonIcon name='Меню' size='medium'>
+				<GlobalSvgSelector id='menu' />
 			</ButtonIcon>
 		</Layout>
 	)
