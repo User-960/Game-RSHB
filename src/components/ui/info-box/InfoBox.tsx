@@ -6,7 +6,6 @@ import styles from './InfoBox.module.scss'
 interface IInfoBoxProps {
 	text: string
 	size: string
-	//clickHandler: any
 	onClick: (value: SetStateAction<boolean>) => void
 }
 

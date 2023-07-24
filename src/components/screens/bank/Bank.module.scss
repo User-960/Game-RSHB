@@ -1,0 +1,87 @@
+@import 'src/assets/styles/variables';
+
+.wrapper {
+	width: 440px;
+	height: 424px;
+	padding: 30px 40px;
+
+	border-radius: 20px;
+	background: $accent-black;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	& .title {
+		color: $accent-green;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 44px;
+		margin-bottom: 35px;
+	}
+
+	& .info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		& .sum {
+			margin-bottom: 20px;
+			width: 105px;
+			height: 90px;
+			padding: 32px;
+			border-radius: 36px;
+			background-color: #dbe2f9;
+
+			color: $accent-black;
+			text-align: center;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 24px;
+		}
+
+		& .text {
+			margin-bottom: 30px;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 24px;
+			color: $font-grey;
+			text-align: center;
+		}
+
+		& .button {
+			border: none;
+			outline: none;
+			border-radius: 12px;
+			border-radius: 12px;
+			border: none;
+			outline: none;
+			cursor: pointer;
+
+			padding: 14px 46px;
+			color: #1f2431;
+			border-radius: 12px;
+			background-color: #89e159;
+
+			font-family: Ubuntu;
+			font-family: $default-font;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 32px;
+
+			transition: color 0.25s ease;
+
+			&:hover {
+				color: $accent-green;
+				background-color: $accent-black;
+				outline: 2px solid $accent-green;
+				box-shadow: 0px 0px 8px 4px $accent-green;
+			}
+		}
+	}
+}

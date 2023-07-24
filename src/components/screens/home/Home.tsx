@@ -7,6 +7,8 @@ import InfoBox from '@/components/ui/info-box/InfoBox'
 import Layout from '@/components/layout/Layout'
 import { IMeta } from '@/components/seo/meta.interface'
 
+import Bank from '../bank/Bank'
+
 const text = `Дорогой друг, приветствую тебя в 2025 году! Здесь сельское хозяйство играет важную роль в обеспечении пищей населения городов и деревень. У нас беда -  урожая на всех не хватает! Помоги фермерам оптимизировать выращивание и сбор растительных культур. Используй современные технологии и автоматизированные системы.`
 
 const Home: FC = () => {
@@ -30,6 +32,8 @@ const Home: FC = () => {
 					onClick={() => setInfoShow(prev => !prev)}
 				/>
 			)}
+
+			<Bank />
 		</Layout>
 	)
 }
