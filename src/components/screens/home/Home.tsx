@@ -5,6 +5,7 @@ import { FC, useState } from 'react'
 import ButtonIcon from '@/components/ui/button/buttonIcon/ButtonIcon'
 import ButtonText from '@/components/ui/button/buttonText/ButtonText'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
+import { MapSvgSelector } from '@/components/ui/global-svg-selector/MapSvgSelector'
 import InfoBox from '@/components/ui/info-box/InfoBox'
 
 import Layout from '@/components/layout/Layout'
@@ -101,6 +102,10 @@ const Home: FC = () => {
 						<Inventory onClick={() => setIsShowInventory(prev => !prev)} />
 					</div>
 				)}
+
+				<div className={styles.greenhouse}>
+					<MapSvgSelector id='greenhouse' />
+				</div>
 			</div>
 		</Layout>
 	)
