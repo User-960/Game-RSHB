@@ -1,22 +1,23 @@
 import cn from 'clsx'
 import Image from 'next/image'
 import imgRobotCollector from 'public/images/robot-collector.jpg'
-import { FC } from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 
 import ButtonText from '@/components/ui/button/buttonText/ButtonText'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
 
 import styles from './Shop.module.scss'
 
-// interface IShopProps {
-// 	blocked: string
-// }
+interface IShopProps {
+	// blocked: string
+	onClick: Dispatch<SetStateAction<boolean>>
+}
 
-const Shop: FC = () => {
+const Shop: FC<IShopProps> = ({ onClick }) => {
 	return (
 		<div className={styles.wrapper}>
 			<h2 className={styles.title}>Магазин</h2>
-			<button className={styles.button}>
+			<button className={styles.button} onClick={() => onClick(false)}>
 				<GlobalSvgSelector id='close' />
 			</button>
 			<div className={styles.box}>

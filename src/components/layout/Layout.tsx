@@ -19,7 +19,7 @@ interface ILayoutProps {
 const Layout: FC<ILayoutProps> = ({ backLink = '/', children, meta }) => {
 	return (
 		<Meta title={meta.title} description={meta.description}>
-			<Header backLink={backLink} />
+			{/* <Header backLink={backLink} /> */}
 			<section className={cn(styles.wrapper)}>
 				<main>{children && <Fragment>{children}</Fragment>}</main>
 			</section>

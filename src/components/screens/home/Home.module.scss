@@ -1,0 +1,51 @@
+@import 'src/assets/styles/variables';
+
+.wrapper {
+	position: relative;
+
+	& .button {
+		border: none;
+		outline: none;
+		border-radius: 12px;
+		cursor: pointer;
+		background-color: transparent;
+
+		color: $accent-grey;
+
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: $accent-green;
+		}
+	}
+
+	& .settings {
+		position: absolute;
+		& .blockMenuBar {
+			margin-top: 10px;
+		}
+	}
+
+	& .finance {
+		position: absolute;
+		right: 0px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+
+		& .buttonShop {
+			margin: 23px 0px;
+		}
+	}
+
+	& .shop,
+	& .bank {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 65px;
+		bottom: 0;
+		margin: auto;
+	}
+}

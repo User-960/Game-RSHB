@@ -1,4 +1,5 @@
 @import 'src/assets/styles/variables';
+@import 'src/assets/styles/animations';
 
 .wrapper {
 	width: 848px;
@@ -6,8 +7,11 @@
 	border-radius: 20px;
 	background: $accent-black;
 	position: relative;
+	margin: 0 auto;
 
-	padding: 20px 40px 40px 40px;
+	padding: 15px 40px 15px 40px;
+
+	animation: opacity 0.8s;
 
 	& .title {
 		color: $accent-green;

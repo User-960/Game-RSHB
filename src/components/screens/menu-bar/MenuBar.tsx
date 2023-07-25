@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { FC } from 'react'
 
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
@@ -5,6 +6,8 @@ import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvg
 import styles from './MenuBar.module.scss'
 
 const MenuBar: FC = () => {
+	const { push } = useRouter()
+
 	return (
 		<div className={styles.wrapper}>
 			<h3 className={styles.title}>Настройки</h3>
@@ -26,7 +29,9 @@ const MenuBar: FC = () => {
 				</button>
 			</div>
 
-			<button className={styles.button}>Выйти</button>
+			<button className={styles.button} onClick={() => push('/')}>
+				Выйти
+			</button>
 		</div>
 	)
 }
