@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import ButtonText from '@/components/ui/button/buttonText/ButtonText'
+
 import styles from './Bank.module.scss'
 
 const Bank: FC = () => {
@@ -12,7 +14,7 @@ const Bank: FC = () => {
 					Вам одобрили беспроцентную рассрочку. Заемные средства необходимо
 					вернуть после прохождения первой локации.
 				</p>
-				<button className={styles.button}>Взять деньги</button>
+				<ButtonText>Взять деньги</ButtonText>
 			</div>
 		</div>
 	)

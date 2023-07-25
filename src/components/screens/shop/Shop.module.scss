@@ -1,0 +1,103 @@
+@import 'src/assets/styles/variables';
+
+.wrapper {
+	width: 848px;
+	// height: 690px;
+	border-radius: 20px;
+	background: $accent-black;
+	position: relative;
+
+	padding: 20px 40px 40px 40px;
+
+	& .title {
+		color: $accent-green;
+		text-align: center;
+		font-size: 72px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 84px;
+		text-align: left;
+		margin-bottom: 24px;
+	}
+
+	& .button {
+		border: none;
+		outline: none;
+		border-radius: 12px;
+		cursor: pointer;
+		background-color: transparent;
+		position: absolute;
+		top: 40px;
+		right: 40px;
+
+		color: #bfc6dc;
+
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: $accent-green;
+		}
+	}
+
+	& .box {
+		display: flex;
+		justify-content: space-between;
+
+		& .list {
+			display: inline-flex;
+			height: 504px;
+			padding: 40px 20px;
+			flex-direction: column;
+			align-items: flex-start;
+			border-radius: 20px;
+			background: #1f2431;
+
+			& .item {
+				display: flex;
+				width: 364px;
+				height: 80px;
+				padding: 8px 5px;
+				justify-content: center;
+				align-items: center;
+				border-radius: 8px;
+				border: 2px solid $font-grey;
+				text-align: center;
+				margin-bottom: 16px;
+
+				color: $font-grey;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 24px;
+			}
+		}
+	}
+
+	& .card {
+		width: 340px;
+		height: 504px;
+		border-radius: 20px;
+		background: #1f2431;
+
+		padding: 30px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		& .textCard {
+			margin: 24px 0px 48px;
+			color: $font-grey;
+			text-align: center;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 24px;
+		}
+	}
+}
+
+.blocked {
+	opacity: 0.5;
+	background: var(--unnamed, #1f2431);
+}
