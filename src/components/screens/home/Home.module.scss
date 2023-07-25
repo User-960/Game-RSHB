@@ -2,6 +2,7 @@
 
 .wrapper {
 	position: relative;
+	height: 95vh;
 
 	& .button {
 		border: none;
@@ -47,5 +48,10 @@
 		top: 65px;
 		bottom: 0;
 		margin: auto;
+	}
+
+	& .exit {
+		position: absolute;
+		bottom: 20px;
 	}
 }

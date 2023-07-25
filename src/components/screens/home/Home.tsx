@@ -1,4 +1,5 @@
 import cn from 'clsx'
+import { useRouter } from 'next/router'
 import { FC, useState } from 'react'
 
 import ButtonIcon from '@/components/ui/button/buttonIcon/ButtonIcon'
@@ -26,6 +27,7 @@ const Home: FC = () => {
 	const [isShowMenu, setIsShowMenu] = useState<boolean>(false)
 	const [isShowShop, setIsShowShop] = useState<boolean>(false)
 	const [isShowBank, setIsShowBank] = useState<boolean>(false)
+	const { push } = useRouter()
 
 	return (
 		<Layout meta={meta}>
@@ -76,21 +78,11 @@ const Home: FC = () => {
 					</div>
 				)}
 
-				{/* <ButtonIcon name='Меню' size='medium'>
-				<GlobalSvgSelector id='menu' />
-			</ButtonIcon> */}
-
-				{/* {infoShow && (
-				<InfoBox
-					text={text}
-					size='large'
-					onClick={() => setInfoShow(prev => !prev)}
-				/>
-			)}
-
-			<Bank />
-
-			<MenuBar /> */}
+				<div className={styles.exit}>
+					<ButtonIcon name='Выход' size='medium' clickHandler={() => push('/')}>
+						<GlobalSvgSelector id='exit' />
+					</ButtonIcon>
+				</div>
 			</div>
 		</Layout>
 	)
