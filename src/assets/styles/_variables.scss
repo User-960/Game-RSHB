@@ -7,13 +7,11 @@ $default-font: 'Ubuntu', sans-serif;
 
 $accent-green: #89e159;
 $accent-black: #141b25;
+$accent-black-hard: #0e1319;
 $accent-grey: #bfc6dc;
 
 $font-white: #ffffff;
 $font-grey: #dbe2f9;
-
-$dark-accent-green: darken($accent-green, 20%);
-$hard-dark-accent-green: darken($accent-green, 30%);
 
 $bx-accent-green: 0 4px 4px rgba($accent-green, 0.25);
 $bx-16: 0 3px 6px rgba(0, 0, 0, 0.16);

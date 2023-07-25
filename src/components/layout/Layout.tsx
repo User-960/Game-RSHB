@@ -16,22 +16,12 @@ interface ILayoutProps {
 	meta: IMeta
 }
 
-const Layout: FC<ILayoutProps> = ({
-	heading = '',
-	backLink = '/',
-	children,
-	meta
-}) => {
+const Layout: FC<ILayoutProps> = ({ backLink = '/', children, meta }) => {
 	return (
 		<Meta title={meta.title} description={meta.description}>
-			<section
-				className={cn(styles.wrapper, { [styles.otherPage]: !!heading })}
-			>
-				<Header backLink={backLink} />
-				<main>
-					{heading && <h1 className={styles.heading}>{heading}</h1>}
-					{children && <Fragment>{children}</Fragment>}
-				</main>
+			<Header backLink={backLink} />
+			<section className={cn(styles.wrapper)}>
+				<main>{children && <Fragment>{children}</Fragment>}</main>
 			</section>
 		</Meta>
 	)

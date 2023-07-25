@@ -1,0 +1,13 @@
+@import 'src/assets/styles/variables';
+.wrapper {
+	.title {
+		margin-bottom: 150px;
+		color: $accent-green;
+		text-align: center;
+		font-size: 72px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 84px;
+		letter-spacing: 14.4px;
+	}
+}

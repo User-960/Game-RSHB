@@ -5,6 +5,15 @@
 	border-radius: 20px;
 	background: #1f2431;
 
+	& .title {
+		margin-bottom: 52px;
+		color: $accent-green;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 44px;
+	}
+
 	> p {
 		color: $font-grey;
 		font-size: 16px;
@@ -17,25 +26,8 @@
 	flex-direction: column;
 
 	> .button {
-		width: 90px;
-		height: 40px;
 		margin-top: 20px;
-		padding: 8px 20px;
-		border-radius: 8px;
-		border: 2px solid $accent-green;
-		color: $accent-green;
-		background-color: transparent;
-		cursor: pointer;
 		align-self: flex-end;
-		outline: none;
-
-		transition: color 0.3s ease;
-	}
-
-	> .button:hover {
-		color: #fff;
-		outline: 2px solid $accent-green;
-		box-shadow: 0px 0px 8px 4px $accent-green;
 	}
 }
 
@@ -52,4 +44,9 @@
 .large {
 	width: 710px;
 	height: 230px;
+}
+
+.mega {
+	padding: 40px;
+	width: 800px;
 }

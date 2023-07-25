@@ -1,7 +1,7 @@
-import Home from '@/components/screens/home/Home'
+import Start from '@/components/screens/start/Start'
 
-const HomePage = () => {
-	return <Home />
+const StartPage = () => {
+	return <Start />
 }
 
-export default HomePage
+export default StartPage

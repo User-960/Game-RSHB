@@ -4,7 +4,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
+	background-color: $accent-black-hard;
+	padding: 20px 50px;
 	> button {
 		color: $font-white;
 		background-color: transparent;
