@@ -1,0 +1,77 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/animations';
+
+.wrapper {
+	width: 550px;
+	height: 336px;
+
+	padding: 20px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	border-radius: 20px;
+	background: #141b25cc;
+
+	position: relative;
+	animation: opacity 0.8s;
+
+	& .title {
+		color: $accent-green;
+		text-align: center;
+		margin-bottom: 20px;
+
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 32px;
+	}
+
+	& .list {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	& .item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 156px;
+		height: 236px;
+		padding: 12px;
+
+		border-radius: 20px;
+		background: $accent-black-medium;
+		box-shadow: 0px 0px 8px 4px $accent-green;
+
+		& .text {
+			margin-top: 20px;
+			color: $accent-green;
+			text-align: center;
+
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 20px;
+		}
+	}
+
+	& .button {
+		border: none;
+		outline: none;
+		border-radius: 12px;
+		cursor: pointer;
+		background-color: transparent;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+
+		color: #bfc6dc;
+
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: $accent-green;
+		}
+	}
+}

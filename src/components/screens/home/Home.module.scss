@@ -23,7 +23,7 @@
 	& .settings {
 		position: absolute;
 		& .blockMenuBar {
-			margin-top: 10px;
+			margin-top: 8px;
 		}
 	}
 
@@ -48,6 +48,18 @@
 		top: 65px;
 		bottom: 0;
 		margin: auto;
+	}
+
+	& .inventory {
+		position: absolute;
+		right: 0;
+		bottom: 120px;
+	}
+
+	& .inventoryButton {
+		position: absolute;
+		right: 0;
+		bottom: 20px;
 	}
 
 	& .exit {

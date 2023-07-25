@@ -11,6 +11,7 @@ import Layout from '@/components/layout/Layout'
 import { IMeta } from '@/components/seo/meta.interface'
 
 import Bank from '../bank/Bank'
+import Inventory from '../inventory/Inventory'
 import MenuBar from '../menu-bar/MenuBar'
 import Shop from '../shop/Shop'
 
@@ -27,6 +28,7 @@ const Home: FC = () => {
 	const [isShowMenu, setIsShowMenu] = useState<boolean>(false)
 	const [isShowShop, setIsShowShop] = useState<boolean>(false)
 	const [isShowBank, setIsShowBank] = useState<boolean>(false)
+	const [isShowInventory, setIsShowInventory] = useState<boolean>(false)
 	const { push } = useRouter()
 
 	return (
@@ -47,7 +49,7 @@ const Home: FC = () => {
 				</div>
 
 				<div className={styles.finance}>
-					<ButtonIcon name='0000' size='medium'>
+					<ButtonIcon name='0000' size='small'>
 						<GlobalSvgSelector id='wallet' />
 					</ButtonIcon>
 
@@ -83,6 +85,22 @@ const Home: FC = () => {
 						<GlobalSvgSelector id='exit' />
 					</ButtonIcon>
 				</div>
+
+				<div className={styles.inventoryButton}>
+					<ButtonIcon
+						name='Инвентарь'
+						size='large'
+						clickHandler={() => setIsShowInventory(prev => !prev)}
+					>
+						<GlobalSvgSelector id='inventory' />
+					</ButtonIcon>
+				</div>
+
+				{isShowInventory && (
+					<div className={styles.inventory}>
+						<Inventory onClick={() => setIsShowInventory(prev => !prev)} />
+					</div>
+				)}
 			</div>
 		</Layout>
 	)
