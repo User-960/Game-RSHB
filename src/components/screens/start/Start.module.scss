@@ -1,7 +1,15 @@
 @import 'src/assets/styles/variables';
+@import 'src/assets/styles/animations';
 .wrapper {
+	position: relative;
+	height: 746px;
+
 	.title {
-		margin-bottom: 150px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		z-index: 20;
+		margin-top: 60px;
 		color: $accent-green;
 		text-align: center;
 		font-size: 72px;
@@ -9,5 +17,60 @@
 		font-weight: 700;
 		line-height: 84px;
 		letter-spacing: 14.4px;
+	}
+
+	& .titleYear {
+		position: absolute;
+		right: 102px;
+		top: 150px;
+		z-index: 20;
+		color: #7dc56b;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 48px;
+	}
+
+	& .logo {
+		position: absolute;
+		right: 102px;
+		bottom: 40px;
+	}
+
+	& .blockButton {
+		position: absolute;
+		bottom: 290px;
+		right: 102px;
+		z-index: 30;
+	}
+	& .infoBox {
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		bottom: 40px;
+		z-index: 40;
+	}
+	& .blockRobot {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 10;
+
+		> img {
+			width: 550px;
+			height: 610px;
+		}
+	}
+	& .blockRobotBack {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 5;
+		animation: opacity 2.5s;
+
+		> img {
+			width: 860px;
+			height: 742px;
+		}
 	}
 }
