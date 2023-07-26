@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import imgRobot from 'public/images/robot.svg'
 import imgRobotBack from 'public/images/robotBackBlur.svg'
-import { FC, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
 
 import ButtonText from '@/components/ui/button/buttonText/ButtonText'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
@@ -27,12 +27,6 @@ const Start: FC = () => {
 	const { push } = useRouter()
 	const [isShowInfoBox, setIsShowInfoBox] = useState<boolean>(false)
 	const [isShowButton, setIsShowButton] = useState<boolean>(true)
-
-	// useEffect(() => {
-	// 	setTimeout(() => {
-	// 		setIsShowInfoBox(false)
-	// 	}, 3000)
-	// }, [])
 
 	return (
 		<Layout meta={meta}>

@@ -1,14 +1,14 @@
 import cn from 'clsx'
 import { useRouter } from 'next/router'
-import { FC, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 
 import ButtonIcon from '@/components/ui/button/buttonIcon/ButtonIcon'
-import ButtonText from '@/components/ui/button/buttonText/ButtonText'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
 import { MapSvgSelector } from '@/components/ui/global-svg-selector/MapSvgSelector'
 import InfoBox from '@/components/ui/info-box/InfoBox'
 
 import Layout from '@/components/layout/Layout'
+import { GameContext } from '@/components/providers/GameProvider'
 import { IMeta } from '@/components/seo/meta.interface'
 
 import Bank from '../bank/Bank'
@@ -25,6 +25,8 @@ const Home: FC = () => {
 		title: 'Home',
 		description: 'RSHB Game'
 	}
+
+	const { wallet } = useContext(GameContext)
 
 	const [isShowMenu, setIsShowMenu] = useState<boolean>(false)
 	const [isShowShop, setIsShowShop] = useState<boolean>(false)
@@ -50,7 +52,7 @@ const Home: FC = () => {
 				</div>
 
 				<div className={styles.finance}>
-					<ButtonIcon name='0000' size='small'>
+					<ButtonIcon name={String(wallet)} size='medium'>
 						<GlobalSvgSelector id='wallet' />
 					</ButtonIcon>
 

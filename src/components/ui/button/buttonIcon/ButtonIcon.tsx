@@ -23,7 +23,7 @@ const ButtonIcon: FC<IButtonIconProps> = ({
 				onClick={clickHandler}
 			>
 				{children}
-				<span>{name}</span>
+				<span>{name + ' ' + '₽'}</span>
 			</button>
 		</div>
 	)
