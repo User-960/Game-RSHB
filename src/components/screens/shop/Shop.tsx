@@ -12,6 +12,7 @@ import {
 	useState
 } from 'react'
 
+import Alert from '@/components/ui/alert/Alert'
 import ButtonText from '@/components/ui/button/buttonText/ButtonText'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
 
@@ -74,11 +75,21 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 		setThirdIsSelected(true)
 	}
 
-	const { wallet, setWallet, inventory, buyRobot } = useContext(GameContext)
+	const { errorStatus, setErrorStatus, inventory, buyRobot } =
+		useContext(GameContext)
 
 	return (
 		<div className={styles.wrapper}>
 			<h2 className={styles.title}>Магазин</h2>
+
+			{errorStatus && (
+				<Alert
+					type='error'
+					text='Упс, возможно у вас нету средств на счёте или вы уже приобретали данного робота.'
+					clickHandler={() => setErrorStatus(false)}
+				/>
+			)}
+
 			<button className={styles.button} onClick={() => onClick(false)}>
 				<GlobalSvgSelector id='close' />
 			</button>
