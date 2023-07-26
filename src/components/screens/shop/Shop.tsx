@@ -3,10 +3,20 @@ import Image from 'next/image'
 import imgAutomatedFertilizerSystem from 'public/images/automated-fertilizer-system.svg'
 import imgRobotCollector from 'public/images/robot-collector.svg'
 import imgSoundDeterrentDevice from 'public/images/sound-deterrent-device.svg'
-import { Dispatch, FC, SetStateAction, useState } from 'react'
+import {
+	Dispatch,
+	FC,
+	SetStateAction,
+	useContext,
+	useEffect,
+	useState
+} from 'react'
 
 import ButtonText from '@/components/ui/button/buttonText/ButtonText'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
+
+import { IRobot } from '@/components/interfaces/robots'
+import { GameContext } from '@/components/providers/GameProvider'
 
 import styles from './Shop.module.scss'
 
@@ -14,29 +24,32 @@ interface IShopProps {
 	onClick: Dispatch<SetStateAction<boolean>>
 }
 
-// const robots = [
-// 	{
-// 		name: 'Робот-собиратель урожая',
-// 		image: 'public/images/sound-deterrent-device.svg',
-// 		description:
-// 			'Автоматически собирает фрукты или овощи с помощью датчиков и робозахвата.',
-// 		price: 1000
-// 	},
-// 	{
-// 		name: 'Звуковое отпугивающее устройство',
-// 		image: 'public/images/sound-deterrent-device.svg',
-// 		description:
-// 			'Автоматически отпугивает вредителей от посевов направленной звуковой волной.',
-// 		price: 1000
-// 	},
-// 	{
-// 		name: 'Автоматизированная система удобрения',
-// 		image: 'public/images/automated-fertilizer-system.svg',
-// 		description:
-// 			'Автоматически определяет потребности почвы в питательных веществах. Применяет удобрения в нужном количестве.',
-// 		price: 1000
-// 	}
-// ]
+const robots: IRobot[] = [
+	{
+		id: 1,
+		name: 'Робот-собиратель урожая',
+		image: 'public/images/sound-deterrent-device.svg',
+		description:
+			'Автоматически собирает фрукты или овощи с помощью датчиков и робозахвата.',
+		price: 1000
+	},
+	{
+		id: 2,
+		name: 'Звуковое отпугивающее устройство',
+		image: 'public/images/sound-deterrent-device.svg',
+		description:
+			'Автоматически отпугивает вредителей от посевов направленной звуковой волной.',
+		price: 1000
+	},
+	{
+		id: 3,
+		name: 'Автоматизированная система удобрения',
+		image: 'public/images/automated-fertilizer-system.svg',
+		description:
+			'Автоматически определяет потребности почвы в питательных веществах. Применяет удобрения в нужном количестве.',
+		price: 1000
+	}
+]
 
 const Shop: FC<IShopProps> = ({ onClick }) => {
 	const [isFirstSelected, setFirstIsSelected] = useState<boolean>(true)
@@ -61,9 +74,7 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 		setThirdIsSelected(true)
 	}
 
-	const clickBtn = () => {
-		console.log(1)
-	}
+	const { wallet, setWallet, inventory, buyRobot } = useContext(GameContext)
 
 	return (
 		<div className={styles.wrapper}>
@@ -122,7 +133,9 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							Автоматически собирает фрукты или овощи с помощью датчиков и
 							робозахвата.
 						</p>
-						<ButtonText clickHandler={clickBtn}>Купить за 1000</ButtonText>
+						<ButtonText clickHandler={() => buyRobot(robots[0], inventory)}>
+							Купить за 1000
+						</ButtonText>
 					</div>
 				)}
 
@@ -148,9 +161,7 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							Автоматически отпугивает вредителей от посевов направленной
 							звуковой волной.
 						</p>
-						<ButtonText clickHandler={() => clickBtn} disabled={true}>
-							Купить за 1000
-						</ButtonText>
+						<ButtonText disabled={true}>Купить за 1000</ButtonText>
 					</div>
 				)}
 
@@ -176,9 +187,7 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							Автоматически определяет потребности почвы в питательных
 							веществах. Применяет удобрения в нужном количестве.
 						</p>
-						<ButtonText clickHandler={() => clickBtn} disabled={true}>
-							Купить за 1000
-						</ButtonText>
+						<ButtonText disabled={true}>Купить за 1000</ButtonText>
 					</div>
 				)}
 			</div>

@@ -15,7 +15,8 @@ type TypeContext = {
 	statusCredit: boolean
 	setStatusCredit: Dispatch<SetStateAction<boolean>>
 	inventory: IRobot[]
-	addRobot: (robot: IRobot, inventory: IRobot[]) => void
+	setInventory: Dispatch<SetStateAction<IRobot[]>>
+	buyRobot: (robot: IRobot, inventory: IRobot[]) => void
 }
 
 export const GameContext = createContext<TypeContext>({
@@ -24,15 +25,20 @@ export const GameContext = createContext<TypeContext>({
 	statusCredit: false,
 	setStatusCredit: () => {},
 	inventory: [],
-	addRobot: (robot: IRobot, inventory: IRobot[]) => {}
+	setInventory: () => {},
+	buyRobot: (robot: IRobot, inventory: IRobot[]) => {}
 })
 
 const GameProvider: FC<PropsWithChildren> = ({ children }) => {
 	const [wallet, setWallet] = useState<number>(0)
 	const [statusCredit, setStatusCredit] = useState<boolean>(false)
-	const inventory: IRobot[] = []
-	const addRobot = (robot: IRobot, inventory: IRobot[]) => {
-		inventory.push(robot)
+	const [inventory, setInventory] = useState<IRobot[]>([])
+
+	const buyRobot = (robot: IRobot) => {
+		if (wallet > 0 && inventory[0] === undefined) {
+			setInventory(prev => [...prev, robot])
+			setWallet(0)
+		}
 	}
 
 	return (
@@ -43,7 +49,8 @@ const GameProvider: FC<PropsWithChildren> = ({ children }) => {
 				statusCredit,
 				setStatusCredit,
 				inventory,
-				addRobot
+				setInventory,
+				buyRobot
 			}}
 		>
 			{children}

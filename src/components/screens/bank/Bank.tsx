@@ -18,6 +18,7 @@ const Bank: FC<IBankProps> = ({ onClick }) => {
 	const takeCredit = () => {
 		if (wallet === 0) {
 			setWallet(1000)
+			setStatusCredit(true)
 		}
 	}
 
