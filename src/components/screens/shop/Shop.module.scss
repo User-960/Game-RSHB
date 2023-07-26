@@ -2,14 +2,14 @@
 @import 'src/assets/styles/animations';
 
 .wrapper {
-	width: 848px;
+	width: 768px;
 	// height: 690px;
 	border-radius: 20px;
 	background: $accent-black;
 	position: relative;
 	margin: 0 auto;
 
-	padding: 15px 40px 15px 40px;
+	padding: 20px;
 	z-index: 100;
 
 	animation: opacity 0.8s;
@@ -17,7 +17,7 @@
 	& .title {
 		color: $accent-green;
 		text-align: center;
-		font-size: 72px;
+		font-size: 52px;
 		font-style: normal;
 		font-weight: 700;
 		line-height: 84px;
@@ -50,7 +50,7 @@
 
 		& .list {
 			display: inline-flex;
-			height: 504px;
+			height: 464px;
 			padding: 40px 20px;
 			flex-direction: column;
 			align-items: flex-start;
@@ -59,15 +59,17 @@
 
 			& .item {
 				display: flex;
-				width: 364px;
+				align-items: center;
+				justify-content: center;
+				list-style: none;
+				width: 324px;
 				height: 80px;
 				padding: 8px 5px;
-				justify-content: center;
-				align-items: center;
 				border-radius: 8px;
 				border: 2px solid $font-grey;
 				text-align: center;
 				margin-bottom: 16px;
+				cursor: pointer;
 
 				color: $font-grey;
 				font-size: 16px;
@@ -80,18 +82,28 @@
 
 	& .card {
 		width: 340px;
-		height: 504px;
+		height: 464px;
 		border-radius: 20px;
 		background: #1f2431;
 
-		padding: 30px;
+		padding: 28px 25px;
 
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+		display: none;
+
+		animation: opacity 0.8s;
+
+		& .image {
+			width: 200px;
+			height: 200px;
+			border-radius: 20px;
+			background: $font-grey;
+			text-align: center;
+			margin: 0 auto;
+			padding: 20px;
+		}
 
 		& .textCard {
-			margin: 24px 0px 48px;
+			margin: 20px 0px 32px;
 			color: $font-grey;
 			text-align: center;
 			font-size: 16px;
@@ -102,7 +114,23 @@
 	}
 }
 
-.blocked {
-	opacity: 0.5;
-	background: var(--unnamed, #1f2431);
+.selected {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid $accent-green !important;
+}
+
+.selectedCard {
+	display: block !important;
+	border: 2px solid $accent-green !important;
+}
+
+// .blocked {
+// 	opacity: 0.5;
+// 	background: #1f2431;
+// }
+
+.blockedItem {
+	border: 2px solid $accent-green !important;
 }

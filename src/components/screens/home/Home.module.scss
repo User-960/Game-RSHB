@@ -29,6 +29,7 @@
 		position: absolute;
 		top: 20px;
 		left: 20px;
+		z-index: 20;
 		& .blockMenuBar {
 			margin-top: 8px;
 		}
@@ -53,15 +54,17 @@
 		position: absolute;
 		left: 0;
 		right: 0;
-		top: 65px;
+		top: 75px;
 		bottom: 0;
 		margin: auto;
+		z-index: 20;
 	}
 
 	& .inventory {
 		position: absolute;
 		right: 0;
 		bottom: 120px;
+		z-index: 20;
 	}
 
 	& .inventoryButton {
@@ -82,6 +85,7 @@
 	bottom: 35px;
 	color: #b8f6a9;
 	cursor: pointer;
+	z-index: 10;
 	// color: $accent-green;
 
 	&:hover {

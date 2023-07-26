@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import imgRobotCollector from 'public/images/robot-collector.jpg'
+import imgRobotCollector from 'public/images/robot-collector.svg'
 import { Dispatch, FC, SetStateAction } from 'react'
 
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
