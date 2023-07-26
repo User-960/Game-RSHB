@@ -3,7 +3,7 @@ import Image from 'next/image'
 import imgAutomatedFertilizerSystem from 'public/images/automated-fertilizer-system.svg'
 import imgRobotCollector from 'public/images/robot-collector.svg'
 import imgSoundDeterrentDevice from 'public/images/sound-deterrent-device.svg'
-import { Dispatch, FC, Fragment, SetStateAction, useState } from 'react'
+import { Dispatch, FC, SetStateAction, useState } from 'react'
 
 import ButtonText from '@/components/ui/button/buttonText/ButtonText'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
@@ -11,11 +11,8 @@ import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvg
 import styles from './Shop.module.scss'
 
 interface IShopProps {
-	// blocked: string
 	onClick: Dispatch<SetStateAction<boolean>>
 }
-
-// const URL = 'http://localhost:3000'
 
 // const robots = [
 // 	{
