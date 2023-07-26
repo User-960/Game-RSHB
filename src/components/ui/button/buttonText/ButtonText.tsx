@@ -6,12 +6,14 @@ import styles from './ButtonText.module.scss'
 interface IButtonTextProps {
 	clickHandler?: any
 	size?: string
+	disabled?: boolean
 	children?: ReactNode
 }
 
 const ButtonText: FC<IButtonTextProps> = ({
 	clickHandler = null,
 	size = '',
+	disabled = false,
 	children
 }) => {
 	return (
@@ -19,6 +21,7 @@ const ButtonText: FC<IButtonTextProps> = ({
 			<button
 				className={cn(styles.button, styles[size])}
 				onClick={clickHandler}
+				disabled={disabled}
 			>
 				{children}
 			</button>

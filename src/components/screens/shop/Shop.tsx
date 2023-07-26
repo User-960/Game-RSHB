@@ -61,6 +61,10 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 		setThirdIsSelected(true)
 	}
 
+	const clickBtn = () => {
+		console.log(1)
+	}
+
 	return (
 		<div className={styles.wrapper}>
 			<h2 className={styles.title}>Магазин</h2>
@@ -118,14 +122,15 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							Автоматически собирает фрукты или овощи с помощью датчиков и
 							робозахвата.
 						</p>
-						<ButtonText>Купить за 1000</ButtonText>
+						<ButtonText clickHandler={clickBtn}>Купить за 1000</ButtonText>
 					</div>
 				)}
 
 				{isSecondSelected && (
 					<div
 						className={cn(styles.card, {
-							[styles.selectedCard]: isSecondSelected
+							[styles.selectedCard]: isSecondSelected,
+							[styles.blockedCard]: true
 						})}
 					>
 						<div className={styles.image}>
@@ -143,14 +148,17 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							Автоматически отпугивает вредителей от посевов направленной
 							звуковой волной.
 						</p>
-						<ButtonText>Купить за 1000</ButtonText>
+						<ButtonText clickHandler={() => clickBtn} disabled={true}>
+							Купить за 1000
+						</ButtonText>
 					</div>
 				)}
 
 				{isThirdSelected && (
 					<div
 						className={cn(styles.card, {
-							[styles.selectedCard]: isThirdSelected
+							[styles.selectedCard]: isThirdSelected,
+							[styles.blockedCard]: true
 						})}
 					>
 						<div className={styles.image}>
@@ -168,7 +176,9 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							Автоматически определяет потребности почвы в питательных
 							веществах. Применяет удобрения в нужном количестве.
 						</p>
-						<ButtonText>Купить за 1000</ButtonText>
+						<ButtonText clickHandler={() => clickBtn} disabled={true}>
+							Купить за 1000
+						</ButtonText>
 					</div>
 				)}
 			</div>
