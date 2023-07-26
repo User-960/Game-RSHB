@@ -29,3 +29,10 @@
 		box-shadow: 0px 0px 8px 4px $accent-green;
 	}
 }
+
+.blocked {
+	cursor: not-allowed;
+	color: #dbe2f9;
+	border: 1px solid #dbe2f9;
+	background: $accent-black-medium;
+}

@@ -6,6 +6,7 @@ import styles from './ButtonText.module.scss'
 interface IButtonTextProps {
 	clickHandler?: any
 	size?: string
+	blocked?: boolean
 	disabled?: boolean
 	children?: ReactNode
 }
@@ -13,13 +14,16 @@ interface IButtonTextProps {
 const ButtonText: FC<IButtonTextProps> = ({
 	clickHandler = null,
 	size = '',
+	blocked,
 	disabled = false,
 	children
 }) => {
 	return (
 		<div className={styles.wrapper}>
 			<button
-				className={cn(styles.button, styles[size])}
+				className={cn(styles.button, styles[size], {
+					[styles.blocked]: blocked
+				})}
 				onClick={clickHandler}
 				disabled={disabled}
 			>

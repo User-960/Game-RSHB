@@ -172,7 +172,9 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							Автоматически отпугивает вредителей от посевов направленной
 							звуковой волной.
 						</p>
-						<ButtonText disabled={true}>Купить за 1000</ButtonText>
+						<ButtonText disabled={true} blocked={true}>
+							Заблокировано
+						</ButtonText>
 					</div>
 				)}
 
@@ -198,7 +200,9 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							Автоматически определяет потребности почвы в питательных
 							веществах. Применяет удобрения в нужном количестве.
 						</p>
-						<ButtonText disabled={true}>Купить за 1000</ButtonText>
+						<ButtonText disabled={true} blocked={true}>
+							Заблокировано
+						</ButtonText>
 					</div>
 				)}
 			</div>
