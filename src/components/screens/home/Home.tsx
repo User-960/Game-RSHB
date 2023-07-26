@@ -18,7 +18,15 @@ import Shop from '../shop/Shop'
 
 import styles from './Home.module.scss'
 
-const text = `Дорогой друг, приветствую тебя в 2025 году! Здесь сельское хозяйство играет важную роль в обеспечении пищей населения городов и деревень. У нас беда -  урожая на всех не хватает! Помоги фермерам оптимизировать выращивание и сбор растительных культур. Используй современные технологии и автоматизированные системы.`
+const introductionBox = {
+	title: 'Дорогой друг,',
+	text: 'Приветствую тебя в 2025 году! Здесь сельское хозяйство играет важную роль в обеспечении пищей населения городов и деревень. У нас беда -  урожая на всех не хватает! Помоги фермерам оптимизировать выращивание и сбор растительных культур. Используй современные технологии и автоматизированные системы.'
+}
+
+const rulesBox = {
+	title: 'Правила,',
+	text: 'Ты видишь карту, на ней три локации. Первая - открыта, вторая и третья -  заблокированы. Тебе нужно за заданное время успеть выполнить задание, чтобы разблокировать следующий этап. За каждое выполненное задание ты будешь получать деньги, которые в будущем сможешь потратить на приобретение новой техники.'
+}
 
 const Home: FC = () => {
 	const meta: IMeta = {
@@ -27,6 +35,10 @@ const Home: FC = () => {
 	}
 
 	const { wallet } = useContext(GameContext)
+
+	const [isShowIntroduction, setIsShowIntroduction] = useState<boolean>(true)
+	const [isShowRules, setIsShowRules] = useState<boolean>(false)
+	const [isShowLocation, setIsShowLocation] = useState<boolean>(false)
 
 	const [isShowMenu, setIsShowMenu] = useState<boolean>(false)
 	const [isShowShop, setIsShowShop] = useState<boolean>(false)
@@ -108,6 +120,51 @@ const Home: FC = () => {
 				<div className={styles.greenhouse}>
 					<MapSvgSelector id='greenhouse' />
 				</div>
+
+				{isShowIntroduction && (
+					<div className={styles.infoBox}>
+						<InfoBox
+							title={introductionBox.title}
+							text={introductionBox.text}
+							size='mega'
+							onClick={() => {
+								setIsShowIntroduction(false)
+								setIsShowRules(true)
+							}}
+						/>
+					</div>
+				)}
+
+				{isShowRules && (
+					<div className={styles.infoBox}>
+						<InfoBox
+							title={rulesBox.title}
+							text={rulesBox.text}
+							size='mega'
+							onClick={() => {
+								setIsShowRules(false)
+								setIsShowLocation(true)
+							}}
+						/>
+					</div>
+				)}
+
+				{isShowLocation && (
+					<div className={styles.infoBoxLocation}>
+						<InfoBox
+							text={'Кликни на первую локацию'}
+							size='small'
+							button={false}
+							onClick={() => {
+								setIsShowRules(false)
+							}}
+						/>
+
+						<div className={styles.arrowDownGreen}>
+							<GlobalSvgSelector id='arrowDownGreen' />
+						</div>
+					</div>
+				)}
 			</div>
 		</Layout>
 	)

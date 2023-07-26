@@ -25,6 +25,32 @@
 		}
 	}
 
+	& .infoBox {
+		padding-top: 130px;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 0px;
+		bottom: 0px;
+		background-color: $accent-black-blur;
+		backdrop-filter: blur(3px);
+		z-index: 40;
+	}
+
+	& .infoBoxLocation {
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 130px;
+		z-index: 40;
+
+		& .arrowDownGreen {
+			position: absolute;
+			left: 120px;
+			top: 85px;
+		}
+	}
+
 	& .settings {
 		position: absolute;
 		top: 20px;
