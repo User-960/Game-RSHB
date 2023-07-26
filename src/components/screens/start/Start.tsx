@@ -31,9 +31,10 @@ const Start: FC = () => {
 	return (
 		<Layout meta={meta}>
 			<div className={styles.wrapper}>
-				<h1 className={styles.title}>Цифровая ферма</h1>
-
-				<h2 className={styles.titleYear}>2025</h2>
+				<div className={styles.blockTitle}>
+					<h1 className={styles.title}>Цифровая ферма</h1>
+					<h2 className={styles.titleYear}>2025</h2>
+				</div>
 
 				<div className={styles.logo}>
 					<GlobalSvgSelector id='logo' />

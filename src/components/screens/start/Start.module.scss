@@ -2,45 +2,49 @@
 @import 'src/assets/styles/animations';
 .wrapper {
 	position: relative;
-	height: 746px;
+	height: 754px;
 
-	.title {
+	& .blockTitle {
 		position: absolute;
-		left: 0;
-		right: 0;
+		top: 5px;
+		right: 40px;
 		z-index: 20;
-		margin-top: 60px;
+		width: 750px;
+		padding: 36px 55px 29px 55px;
 		color: $accent-green;
+		margin-top: 40px;
+
+		border-radius: 36px;
+		border: 2px solid $accent-green;
+		background-color: $accent-black;
+	}
+	& .title {
 		text-align: center;
 		font-size: 72px;
 		font-style: normal;
 		font-weight: 700;
 		line-height: 84px;
-		letter-spacing: 14.4px;
 	}
 
 	& .titleYear {
-		position: absolute;
-		right: 102px;
-		top: 150px;
-		z-index: 20;
-		color: #7dc56b;
+		text-align: end;
+		color: $accent-green;
 		font-size: 32px;
 		font-style: normal;
 		font-weight: 700;
-		line-height: 48px;
+		line-height: 30px;
 	}
 
 	& .logo {
 		position: absolute;
-		right: 102px;
-		bottom: 40px;
+		top: 40px;
+		left: 40px;
 	}
 
 	& .blockButton {
 		position: absolute;
-		bottom: 290px;
-		right: 102px;
+		bottom: 40px;
+		right: 40px;
 		z-index: 30;
 	}
 	& .infoBox {
@@ -52,25 +56,25 @@
 	}
 	& .blockRobot {
 		position: absolute;
-		bottom: 0;
-		left: 0;
+		bottom: 15px;
+		left: 290px;
 		z-index: 10;
 
 		> img {
-			width: 550px;
-			height: 610px;
+			width: 456px;
+			height: 505px;
 		}
 	}
 	& .blockRobotBack {
 		position: absolute;
 		bottom: 0;
-		left: 0;
+		left: 40px;
 		z-index: 5;
 		animation: opacity 2.5s;
 
 		> img {
-			width: 860px;
-			height: 742px;
+			width: 651px;
+			height: 592px;
 		}
 	}
 }
