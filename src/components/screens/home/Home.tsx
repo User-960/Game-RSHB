@@ -52,7 +52,7 @@ const Home: FC = () => {
 				</div>
 
 				<div className={styles.finance}>
-					<ButtonIcon name={String(wallet)} size='medium'>
+					<ButtonIcon name={`${String(wallet)} ${'₽'}`} size='medium'>
 						<GlobalSvgSelector id='wallet' />
 					</ButtonIcon>
 
