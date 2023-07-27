@@ -37,22 +37,6 @@
 		line-height: 32px;
 	}
 
-	& .link {
-		display: flex;
-		> svg,
-		> p {
-			cursor: pointer;
-		}
-	}
-
-	& .linkText {
-		color: $accent-green;
-		font-size: 20px;
-		font-style: normal;
-		font-weight: 500;
-		line-height: 32px;
-	}
-
 	& .blockButton {
 		margin-top: 40px;
 		width: 100%;

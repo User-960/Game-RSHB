@@ -16,6 +16,7 @@ import {
 import Alert from '@/components/ui/alert/Alert'
 import ButtonText from '@/components/ui/button/buttonText/ButtonText'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
+import LinkComponent from '@/components/ui/link/LinkComponent'
 
 import { IRobot } from '@/components/interfaces/robots'
 import { GameContext } from '@/components/providers/GameProvider'
@@ -146,6 +147,8 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							робозахвата.
 						</p>
 
+						<LinkComponent link='/something' text='Узнать больше' />
+
 						{inventory.length > 0 ? (
 							<ButtonText bought={true}>В инвентаре</ButtonText>
 						) : (
@@ -179,10 +182,7 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							звуковой волной.
 						</p>
 
-						<Link href='/something' className={styles.link}>
-							<p className={styles.linkText}>Узнать больше</p>
-							<GlobalSvgSelector id='arrowLink' />
-						</Link>
+						<LinkComponent link='/something' text='Узнать больше' />
 
 						<ButtonText disabled={true} blocked={true}>
 							Заблокировано
@@ -212,6 +212,9 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							Автоматически определяет потребности почвы в питательных
 							веществах. Применяет удобрения в нужном количестве.
 						</p>
+
+						<LinkComponent link='/something' text='Узнать больше' />
+
 						<ButtonText disabled={true} blocked={true}>
 							Заблокировано
 						</ButtonText>

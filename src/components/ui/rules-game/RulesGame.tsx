@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { FC } from 'react'
 
 import { GlobalSvgSelector } from '../global-svg-selector/GlobalSvgSelector'
+import LinkComponent from '../link/LinkComponent'
 
 import styles from './RulesGame.module.scss'
 
@@ -25,10 +26,7 @@ const RulesGame: FC<IRulesGameProps> = ({
 			<h2 className={styles.title}>{title}</h2>
 			<p className={styles.text}>{text}</p>
 
-			<Link href='/something' className={styles.link}>
-				<p className={styles.linkText}>Узнать больше про сбор урожая</p>
-				<GlobalSvgSelector id='arrowLink' />
-			</Link>
+			<LinkComponent link='/something' text='Узнать больше про сбор урожая' />
 
 			<div className={styles.blockButton}>
 				<button className={styles.buttonMap} onClick={() => push('/home')}>
