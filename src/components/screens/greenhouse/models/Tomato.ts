@@ -16,6 +16,7 @@ export class Tomato {
 	logo: typeof tomatoRipe | null
 	name: TomatoNames
 	id: number
+	gravity: number
 
 	constructor(color: Colors, cell: Cell) {
 		this.color = color
@@ -24,6 +25,7 @@ export class Tomato {
 		this.logo = null
 		this.name = TomatoNames.TOMATO
 		this.id = Math.random()
+		this.gravity = 1
 	}
 
 	fall() {

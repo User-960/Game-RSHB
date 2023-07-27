@@ -7,7 +7,7 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-image: url(../../../../public/images/mapGreenhouse.svg);
+	background-image: url(../../../../public/images/map-Greenhouse.svg);
 
 	& .button {
 		border: none;
@@ -16,12 +16,12 @@
 		cursor: pointer;
 		background-color: transparent;
 
-		color: $accent-grey;
+		color: $accent-green;
 
 		transition: color 0.3s ease;
 
 		&:hover {
-			color: $accent-green;
+			color: $accent-grey;
 		}
 	}
 
@@ -68,7 +68,7 @@
 		position: absolute;
 		top: 70px;
 		left: 360px;
-		z-index: 40;
+		z-index: 60;
 
 		& .arrowRightGreen {
 			position: absolute;
@@ -109,7 +109,7 @@
 		top: 75px;
 		bottom: 0;
 		margin: auto;
-		z-index: 50;
+		z-index: 60;
 	}
 
 	& .inventory {

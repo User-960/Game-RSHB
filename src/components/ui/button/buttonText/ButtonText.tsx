@@ -7,6 +7,7 @@ interface IButtonTextProps {
 	clickHandler?: any
 	size?: string
 	blocked?: boolean
+	bought?: boolean
 	disabled?: boolean
 	children?: ReactNode
 }
@@ -15,6 +16,7 @@ const ButtonText: FC<IButtonTextProps> = ({
 	clickHandler = null,
 	size = '',
 	blocked,
+	bought,
 	disabled = false,
 	children
 }) => {
@@ -22,7 +24,8 @@ const ButtonText: FC<IButtonTextProps> = ({
 		<div className={styles.wrapper}>
 			<button
 				className={cn(styles.button, styles[size], {
-					[styles.blocked]: blocked
+					[styles.blocked]: blocked,
+					[styles.bought]: bought
 				})}
 				onClick={clickHandler}
 				disabled={disabled}

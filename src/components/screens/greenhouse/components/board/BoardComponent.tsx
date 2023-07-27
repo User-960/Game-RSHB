@@ -1,4 +1,4 @@
-import { FC, Fragment, useState } from 'react'
+import { FC, Fragment } from 'react'
 
 import { Board } from '../../models/Board'
 import { Cell } from '../../models/Cell'

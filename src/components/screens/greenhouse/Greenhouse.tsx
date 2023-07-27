@@ -32,8 +32,6 @@ const Greenhouse: FC = () => {
 		newBoard.addTomatoes()
 		newBoard.addRobotCollector()
 		setBoard(newBoard)
-
-		// console.log(newBoard.cells)
 	}
 
 	return (

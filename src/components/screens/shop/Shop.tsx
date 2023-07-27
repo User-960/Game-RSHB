@@ -1,5 +1,6 @@
 import cn from 'clsx'
 import Image from 'next/image'
+import Link from 'next/link'
 import imgAutomatedFertilizerSystem from 'public/images/automated-fertilizer-system.svg'
 import imgRobotCollector from 'public/images/robot-collector.svg'
 import imgSoundDeterrentDevice from 'public/images/sound-deterrent-device.svg'
@@ -144,9 +145,14 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							Автоматически собирает фрукты или овощи с помощью датчиков и
 							робозахвата.
 						</p>
-						<ButtonText clickHandler={() => buyRobot(robots[0], inventory)}>
-							Купить за 1000
-						</ButtonText>
+
+						{inventory.length > 0 ? (
+							<ButtonText bought={true}>В инвентаре</ButtonText>
+						) : (
+							<ButtonText clickHandler={() => buyRobot(robots[0], inventory)}>
+								Купить за 1000
+							</ButtonText>
+						)}
 					</div>
 				)}
 
@@ -172,6 +178,12 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 							Автоматически отпугивает вредителей от посевов направленной
 							звуковой волной.
 						</p>
+
+						<Link href='/something' className={styles.link}>
+							<p className={styles.linkText}>Узнать больше</p>
+							<GlobalSvgSelector id='arrowLink' />
+						</Link>
+
 						<ButtonText disabled={true} blocked={true}>
 							Заблокировано
 						</ButtonText>
