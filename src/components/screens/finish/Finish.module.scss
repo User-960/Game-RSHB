@@ -1,0 +1,108 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/animations';
+
+.wrapper {
+	position: relative;
+	height: 754px;
+
+	& .blockTitle {
+		position: absolute;
+		top: 5px;
+		right: 40px;
+		z-index: 20;
+		width: 750px;
+		padding: 36px 55px 29px 55px;
+		color: $accent-green;
+		margin-top: 40px;
+
+		border-radius: 36px;
+		border: 2px solid $accent-green;
+		background-color: $accent-black;
+	}
+	& .title {
+		text-align: center;
+		font-size: 72px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 84px;
+	}
+
+	& .titleYear {
+		text-align: end;
+		color: $accent-green;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 30px;
+	}
+
+	& .logo {
+		position: absolute;
+		top: 40px;
+		left: 40px;
+	}
+
+	& .blockButton {
+		position: absolute;
+		bottom: 40px;
+		right: 40px;
+		z-index: 30;
+	}
+	& .blockRobotBack {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 5;
+		animation: opacity 2.5s;
+
+		> img {
+			opacity: 0.4;
+			width: 650px;
+			height: 610px;
+		}
+	}
+
+	& .statistics {
+		position: absolute;
+		bottom: 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		z-index: 10;
+
+		& .statTitle {
+			margin-bottom: 15px;
+			color: $accent-green-dark;
+			font-size: 32px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 48px;
+		}
+
+		& .list {
+			margin-bottom: 45px;
+			& .item {
+				margin-bottom: 15px;
+				list-style: none;
+				display: flex;
+				align-items: center;
+			}
+
+			& .text {
+				margin-right: 25px;
+				color: #f5f5f5;
+				font-size: 20px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 32px;
+			}
+
+			& .result {
+				width: 108px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+		}
+	}
+}

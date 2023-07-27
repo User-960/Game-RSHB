@@ -6,7 +6,6 @@ import { FC, useState } from 'react'
 
 import ButtonText from '@/components/ui/button/buttonText/ButtonText'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
-import InfoBox from '@/components/ui/info-box/InfoBox'
 
 import Layout from '@/components/layout/Layout'
 import { IMeta } from '@/components/seo/meta.interface'
