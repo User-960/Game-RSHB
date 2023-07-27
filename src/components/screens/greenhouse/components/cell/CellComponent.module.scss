@@ -1,0 +1,9 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/animations';
+
+.cell {
+	width: 20px;
+	height: 20px;
+
+	background-color: $accent-black;
+}

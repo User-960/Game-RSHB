@@ -1,0 +1,9 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/animations';
+
+.board {
+	width: calc(20px * 35);
+	height: calc(20px * 35);
+	display: flex;
+	flex-wrap: wrap;
+}
