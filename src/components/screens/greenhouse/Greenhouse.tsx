@@ -1,5 +1,6 @@
 import { FC, useState } from 'react'
 
+import { GreenhouseSvgSelector } from '@/components/ui/global-svg-selector/GreenhouseSvgSelector'
 import RulesGame from '@/components/ui/rules-game/RulesGame'
 
 import Layout from '@/components/layout/Layout'
@@ -28,6 +29,12 @@ const Greenhouse: FC = () => {
 					/>
 				</div>
 			)}
+
+			<div className={styles.wrapper}>
+				<GreenhouseSvgSelector id='greenhouseLeft' />
+				<canvas id={styles.canvas}></canvas>
+				<GreenhouseSvgSelector id='greenhouseRight' />
+			</div>
 		</Layout>
 	)
 }
