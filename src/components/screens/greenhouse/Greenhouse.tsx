@@ -1,5 +1,8 @@
+import { useRouter } from 'next/router'
 import { FC, useEffect, useState } from 'react'
 
+import ButtonIcon from '@/components/ui/button/buttonIcon/ButtonIcon'
+import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
 import { GreenhouseSvgSelector } from '@/components/ui/global-svg-selector/GreenhouseSvgSelector'
 import RulesGame from '@/components/ui/rules-game/RulesGame'
 
@@ -19,8 +22,10 @@ const Greenhouse: FC = () => {
 		title: 'Greenhouse',
 		description: 'First level in RSHB Game'
 	}
+
 	const [isShowRulesGameBox, setIsShowRulesGameBox] = useState<boolean>(true)
 	const [board, setBoard] = useState<Board>(new Board())
+	const { push } = useRouter()
 
 	useEffect(() => {
 		restart()
@@ -46,11 +51,26 @@ const Greenhouse: FC = () => {
 			)}
 
 			<div className={styles.wrapper}>
-				<GreenhouseSvgSelector id='greenhouseLeft' />
+				<div className={styles.leftPart}>
+					<GreenhouseSvgSelector id='greenhouseLeft' />
+					<ButtonIcon size='min' clickHandler={() => push('/home')}>
+						<GlobalSvgSelector id='exit' />
+					</ButtonIcon>
+				</div>
 				<div className={styles.board}>
 					<BoardComponent board={board} setBoard={setBoard} />
 				</div>
-				<GreenhouseSvgSelector id='greenhouseRight' />
+				<div className={styles.rightPart}>
+					<div className={styles.rightPartScore}>
+						<ButtonIcon size='small' name='12/20'>
+							<GlobalSvgSelector id='iconTomato' />
+						</ButtonIcon>
+						<ButtonIcon size='small' name='1200'>
+							<GlobalSvgSelector id='iconWallet' />
+						</ButtonIcon>
+					</div>
+					<GreenhouseSvgSelector id='greenhouseRight' />
+				</div>
 			</div>
 		</Layout>
 	)

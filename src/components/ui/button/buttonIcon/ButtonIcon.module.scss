@@ -9,17 +9,16 @@
 	outline: none;
 	border-radius: 16px;
 	cursor: pointer;
-	background-color: transparent;
 
 	height: 84px;
-	padding: 20px;
+	padding: 16px;
 	display: flex;
 	align-items: center;
 
 	transition: color 0.3s ease;
 
 	color: $accent-green;
-	background: rgba(20, 27, 37, 0.9);
+	background-color: rgba(20, 27, 37, 0.9);
 	box-shadow: 0px 0px 8px 4px $accent-green;
 
 	&:hover {
@@ -33,6 +32,10 @@
 		line-height: 48px;
 		font-weight: 400;
 	}
+}
+
+.min {
+	width: 85px;
 }
 
 .small {
