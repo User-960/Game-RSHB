@@ -45,12 +45,12 @@ export class Board {
 	}
 
 	private addTomatoDamaged() {
-		new TomatoDamaged(Colors.DARK, this.getCell(12, 23))
+		new TomatoDamaged(Colors.DARK, this.getCell(12, 14))
 		new TomatoDamaged(Colors.DARK, this.getCell(17, 17))
 	}
 
 	public addRobotCollector() {
-		new RobotCollector(this.getCell(17, 33))
+		new RobotCollector(this.getCell(17, 29))
 	}
 
 	public addTomatoes() {

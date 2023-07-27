@@ -13,11 +13,25 @@ const CellComponent: FC<ICellComponentProps> = ({ cell }) => {
 	return (
 		<div className={styles.cell}>
 			{cell.tomato?.logo && (
-				<Image src={cell.tomato?.logo} alt={cell.tomato?.name} />
+				<div className={styles.tomato}>
+					<Image
+						src={cell.tomato?.logo}
+						alt={cell.tomato?.name}
+						draggable={false}
+						priority
+					/>
+				</div>
 			)}
 
 			{cell.robot?.logo && (
-				<Image src={cell.robot?.logo} alt={cell.robot?.name} />
+				<div className={styles.robot}>
+					<Image
+						src={cell.robot?.logo}
+						alt={cell.robot?.name}
+						draggable={false}
+						priority
+					/>
+				</div>
 			)}
 		</div>
 	)

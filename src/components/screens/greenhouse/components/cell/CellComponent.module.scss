@@ -2,14 +2,33 @@
 @import 'src/assets/styles/animations';
 
 .cell {
+	position: relative;
 	width: 20px;
 	height: 20px;
+	// background-color: $accent-black;
 
-	& img {
-		position: relative;
-		width: 20px;
-		height: 20px;
+	& .tomato {
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		top: -10px;
+		left: -10px;
+
+		& > img {
+			position: absolute;
+			height: 40px;
+		}
 	}
 
-	background-color: $accent-black;
+	& .robot {
+		position: absolute;
+		width: 140px;
+		height: 140px;
+		top: -10px;
+		left: -60px;
+		& > img {
+			position: absolute;
+			height: 140px;
+		}
+	}
 }
