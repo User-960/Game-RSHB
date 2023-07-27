@@ -1,0 +1,14 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/animations';
+
+.blockRulesGame {
+	padding-top: 80px;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	background-color: $accent-black-blur;
+	backdrop-filter: blur(8px);
+	z-index: 40;
+}

@@ -1,5 +1,5 @@
 import cn from 'clsx'
-import { Dispatch, FC, SetStateAction } from 'react'
+import { FC } from 'react'
 
 import ButtonText from '../button/buttonText/ButtonText'
 
