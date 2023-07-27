@@ -77,7 +77,7 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 		setThirdIsSelected(true)
 	}
 
-	const { errorStatus, setErrorStatus, inventory, buyRobot } =
+	const { wallet, errorStatus, setErrorStatus, inventory, buyRobot } =
 		useContext(GameContext)
 
 	return (
@@ -163,7 +163,7 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 					<div
 						className={cn(styles.card, {
 							[styles.selectedCard]: isSecondSelected,
-							[styles.blockedCard]: true
+							[styles.blockedCard]: wallet === 2000 ? false : true
 						})}
 					>
 						<div className={styles.image}>
@@ -184,9 +184,24 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 
 						<LinkComponent link='/something' text='Узнать больше' />
 
-						<ButtonText disabled={true} blocked={true}>
+						{/* <ButtonText
+							disabled={wallet === 2000 ? false : true}
+							blocked={wallet === 2000 ? false : true}
+						>
 							Заблокировано
-						</ButtonText>
+						</ButtonText> */}
+
+						{inventory.length > 1 ? (
+							<ButtonText bought={true}>В инвентаре</ButtonText>
+						) : (
+							<ButtonText
+								clickHandler={() => buyRobot(robots[1], inventory)}
+								disabled={wallet === 2000 ? false : true}
+								blocked={wallet === 2000 ? false : true}
+							>
+								{wallet === 2000 ? 'Купить за 2000' : 'Заблокировано'}
+							</ButtonText>
+						)}
 					</div>
 				)}
 

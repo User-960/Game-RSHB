@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import imgRobotFertilizer from 'public/images/automated-fertilizer-system.svg'
 import imgRobotCollector from 'public/images/robot-collector.svg'
 import { Dispatch, FC, SetStateAction, useContext, useEffect } from 'react'
 
@@ -28,7 +29,7 @@ const Inventory: FC<IInventoryProps> = ({ onClick }) => {
 				{inventory.map((robot: any) => (
 					<li className={styles.item} key={robot.id}>
 						<Image
-							src={imgRobotCollector}
+							src={robot.id === 1 ? imgRobotCollector : imgRobotFertilizer}
 							alt={robot.name}
 							width={124}
 							height={124}
@@ -39,32 +40,6 @@ const Inventory: FC<IInventoryProps> = ({ onClick }) => {
 						<p className={styles.text}>{robot.name}</p>
 					</li>
 				))}
-
-				{/* <li className={styles.item}>
-					<Image
-						src={imgRobotCollector}
-						alt='robot-collector'
-						width={124}
-						height={124}
-						draggable={false}
-						priority={true}
-						style={{ borderRadius: '20px' }}
-					/>
-					<p className={styles.text}>Робот-собиратель урожая</p>
-				</li>
-
-				<li className={styles.item}>
-					<Image
-						src={imgRobotCollector}
-						alt='robot-collector'
-						width={124}
-						height={124}
-						draggable={false}
-						priority={true}
-						style={{ borderRadius: '20px' }}
-					/>
-					<p className={styles.text}>Робот-собиратель урожая</p>
-				</li> */}
 			</ul>
 		</div>
 	)

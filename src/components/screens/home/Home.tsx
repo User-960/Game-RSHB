@@ -64,25 +64,21 @@ const Home: FC = () => {
 	const { push } = useRouter()
 
 	useEffect(() => {
-		if (wallet === 0) {
+		const localStatusUser = localStorage.getItem('statusUser')
+		if (wallet === 0 && Number(localStatusUser) !== 1) {
 			setIsShowInventory(false)
 			setIsShowEmptyInventoryBox(false)
 			setIsShowShopBox(true)
+		} else {
+			setIsShowInventory(false)
+			setIsShowEmptyInventoryBox(false)
+			setIsShowShopBox(false)
 		}
 	}, [isShowBank])
 
 	useEffect(() => {
-		setIsShowShopBox(false)
-		if (
-			!isShowRulesBox &&
-			!isShowIntroductionBox &&
-			!isShowRulesBox &&
-			!isShowEmptyInventoryBox
-		) {
-			setStatusUser(1)
-			localStorage.setItem('statusUser', String(statusUser))
-		}
-	}, [isShowShop])
+		console.log(wallet)
+	}, [wallet])
 
 	useEffect(() => {
 		const localStatusUser = localStorage.getItem('statusUser')

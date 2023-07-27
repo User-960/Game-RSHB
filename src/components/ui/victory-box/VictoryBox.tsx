@@ -1,8 +1,9 @@
 import cn from 'clsx'
 import { useRouter } from 'next/router'
-import { FC } from 'react'
+import { FC, useContext } from 'react'
 
-import ButtonText from '../button/buttonText/ButtonText'
+import { GameContext } from '@/components/providers/GameProvider'
+
 import { GlobalSvgSelector } from '../global-svg-selector/GlobalSvgSelector'
 
 import styles from './VictoryBox.module.scss'
@@ -14,6 +15,8 @@ interface IVictoryBoxProps {
 }
 
 const VictoryBox: FC<IVictoryBoxProps> = ({ title, text, clickHandler }) => {
+	const { setWallet } = useContext(GameContext)
+
 	const { push } = useRouter()
 	return (
 		<div className={cn(styles.wrapper)}>
@@ -34,7 +37,7 @@ const VictoryBox: FC<IVictoryBoxProps> = ({ title, text, clickHandler }) => {
 						<p className={styles.text}>Заработано монет:</p>
 						<div className={styles.result}>
 							<GlobalSvgSelector id='iconWallet' />
-							<p>5000 ₽</p>
+							<p>2000 ₽</p>
 						</div>
 					</li>
 				</ul>
@@ -46,7 +49,13 @@ const VictoryBox: FC<IVictoryBoxProps> = ({ title, text, clickHandler }) => {
 					>
 						Eщё раз
 					</button>
-					<button className={styles.buttonExit} onClick={() => push('/home')}>
+					<button
+						className={styles.buttonExit}
+						onClick={() => {
+							setWallet(2000)
+							push('/home')
+						}}
+					>
 						Выйти
 					</button>
 				</div>

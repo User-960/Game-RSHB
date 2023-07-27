@@ -40,7 +40,7 @@ const GameProvider: FC<PropsWithChildren> = ({ children }) => {
 	const [errorStatus, setErrorStatus] = useState<boolean>(false)
 
 	const buyRobot = (robot: IRobot) => {
-		if (wallet > 0 && inventory[0] === undefined) {
+		if (wallet > 0) {
 			setInventory(prev => [...prev, robot])
 			setWallet(0)
 		} else {
