@@ -1,9 +1,22 @@
+import Image from 'next/image'
 import { FC } from 'react'
+
+import { Cell } from '../../models/Cell'
 
 import styles from './CellComponent.module.scss'
 
-const CellComponent: FC = () => {
-	return <div className={styles.cell}></div>
+interface ICellComponentProps {
+	cell: Cell
+}
+
+const CellComponent: FC<ICellComponentProps> = ({ cell }) => {
+	return (
+		<div className={styles.cell}>
+			{cell.tomato?.logo && (
+				<Image src={cell.tomato?.logo} alt={cell.tomato?.name} />
+			)}
+		</div>
+	)
 }
 
 export default CellComponent

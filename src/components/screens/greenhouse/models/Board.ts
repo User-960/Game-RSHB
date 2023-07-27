@@ -1,4 +1,8 @@
 import { Cell } from './Cell'
+import { Colors } from './Colors'
+import { TomatoDamaged } from './tomatoes/TomatoDamaged'
+import { TomatoGreen } from './tomatoes/TomatoGreen'
+import { TomatoRipe } from './tomatoes/TomatoRipe'
 
 export class Board {
 	cells: Cell[][] = []
@@ -24,24 +28,29 @@ export class Board {
 	// 	return newBoard
 	// }
 
-	// public getCell(x: number, y: number) {
-	// 	return this.cells[y][x]
-	// }
+	public getCell(x: number, y: number) {
+		return this.cells[y][x]
+	}
 
-	// private addKings() {
-	// 	new King(Colors.BLACK, this.getCell(4, 0))
-	// 	new King(Colors.WHITE, this.getCell(4, 7))
-	// }
+	private addTomatoRipe() {
+		new TomatoRipe(Colors.RED, this.getCell(3, 3))
+		new TomatoRipe(Colors.RED, this.getCell(7, 2))
+		new TomatoRipe(Colors.RED, this.getCell(4, 20))
+	}
 
-	// private addPawns() {
-	// 	for (let i = 0; i < 8; i++) {
-	// 		new Pawn(Colors.BLACK, this.getCell(i, 1))
-	// 		new Pawn(Colors.WHITE, this.getCell(i, 6))
-	// 	}
-	// }
+	private addTomatoGreen() {
+		new TomatoGreen(Colors.GREEN, this.getCell(10, 5))
+		new TomatoGreen(Colors.GREEN, this.getCell(32, 15))
+	}
 
-	// public addFigures() {
-	// 	this.addKings()
-	// 	this.addPawns()
-	// }
+	private addTomatoDamaged() {
+		new TomatoDamaged(Colors.DARK, this.getCell(12, 23))
+		new TomatoDamaged(Colors.DARK, this.getCell(17, 17))
+	}
+
+	public addTomatoes() {
+		this.addTomatoRipe()
+		this.addTomatoGreen()
+		this.addTomatoDamaged()
+	}
 }

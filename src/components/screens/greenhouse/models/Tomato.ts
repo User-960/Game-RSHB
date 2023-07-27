@@ -1,15 +1,32 @@
-import { Board } from './Board'
+import tomatoRipe from 'public/images/tomato-ripe.svg'
+
+import { Cell } from './Cell'
+import { Colors } from './Colors'
+
+export enum TomatoNames {
+	TOMATO = 'Помидор',
+	RIPE = 'Спелый',
+	GREEN = 'Зелёный',
+	DAMAGED = 'порченый'
+}
 
 export class Tomato {
-	readonly x: number
-	readonly y: number
-	board: Board
-	id: number // for react keys
+	cell: Cell
+	color: Colors
+	logo: typeof tomatoRipe | null
+	name: TomatoNames
+	id: number
 
-	constructor(board: Board, x: number, y: number) {
-		this.x = x
-		this.y = y
-		this.board = board
+	constructor(color: Colors, cell: Cell) {
+		this.color = color
+		this.cell = cell
+		this.cell.tomato = this
+		this.logo = null
+		this.name = TomatoNames.TOMATO
 		this.id = Math.random()
+	}
+
+	fall() {
+		return true
 	}
 }
