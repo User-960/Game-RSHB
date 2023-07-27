@@ -10,7 +10,7 @@ interface IInfoBoxProps {
 	text: string
 	size: string
 	button?: boolean
-	onClick: () => any
+	onClick?: () => any
 }
 
 const InfoBox: FC<IInfoBoxProps> = ({

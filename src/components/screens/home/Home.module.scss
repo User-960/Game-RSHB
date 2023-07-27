@@ -51,6 +51,32 @@
 		}
 	}
 
+	& .infoBoxEmptyInventory {
+		position: absolute;
+		top: 80px;
+		left: 260px;
+		z-index: 40;
+
+		& .arrowRightGreen {
+			position: absolute;
+			left: 580px;
+			top: 106px;
+		}
+	}
+
+	& .infoBoxShop {
+		position: absolute;
+		top: 70px;
+		left: 360px;
+		z-index: 40;
+
+		& .arrowRightGreen {
+			position: absolute;
+			left: 500px;
+			top: 50px;
+		}
+	}
+
 	& .settings {
 		position: absolute;
 		top: 20px;
@@ -83,7 +109,7 @@
 		top: 75px;
 		bottom: 0;
 		margin: auto;
-		z-index: 20;
+		z-index: 50;
 	}
 
 	& .inventory {
