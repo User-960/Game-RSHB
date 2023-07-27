@@ -7,13 +7,14 @@ import { TomatoRipe } from './tomatoes/TomatoRipe'
 
 export class Board {
 	cells: Cell[][] = []
+	direction: string = 'right'
 
 	public initCells() {
-		// Create board with 8 rows
+		// Create board with 35 rows
 		for (let i = 0; i < 35; i++) {
 			const row: Cell[] = []
 
-			// Create 1 row with 8 cells
+			// Create 1 row with 35 cells
 			for (let j = 0; j < 35; j++) {
 				row.push(new Cell(this, j, i, null, null))
 			}
@@ -22,12 +23,11 @@ export class Board {
 		}
 	}
 
-	// public getCopyBoard(): Board {
-	// 	const newBoard = new Board()
-	// 	newBoard.cells = this.cells
-
-	// 	return newBoard
-	// }
+	public getCopyBoard(): Board {
+		const newBoard = new Board()
+		newBoard.cells = this.cells
+		return newBoard
+	}
 
 	public getCell(x: number, y: number) {
 		return this.cells[y][x]

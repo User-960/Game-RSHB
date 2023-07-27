@@ -12,6 +12,7 @@ export class Robot {
 	logo: typeof robotCollector | null
 	name: RobotNames
 	id: number
+	direction: string | null
 
 	constructor(cell: Cell) {
 		this.cell = cell
@@ -19,9 +20,8 @@ export class Robot {
 		this.logo = null
 		this.name = RobotNames.ROBOT
 		this.id = Math.random()
+		this.direction = ''
 	}
 
-	collect() {
-		return true
-	}
+	collect() {}
 }

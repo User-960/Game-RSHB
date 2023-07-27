@@ -9,7 +9,6 @@ import { IMeta } from '@/components/seo/meta.interface'
 
 import styles from './Greenhouse.module.scss'
 import { Board } from './models/Board'
-import { Cell } from './models/Cell'
 
 const textRules = {
 	text: 'Управляй роботом - собирателем урожая (двигай его влево или вправо), выбирай правильный тип плодов помидора и минуй еще зелёные или переспелые плоды. За спелые томаты ты будешь получать монеты, которые можешь потратить в магазине или погасить кредит в банке.'
@@ -17,8 +16,8 @@ const textRules = {
 
 const Greenhouse: FC = () => {
 	const meta: IMeta = {
-		title: 'Home',
-		description: 'RSHB Game'
+		title: 'Greenhouse',
+		description: 'First level in RSHB Game'
 	}
 	const [isShowRulesGameBox, setIsShowRulesGameBox] = useState<boolean>(true)
 	const [board, setBoard] = useState<Board>(new Board())

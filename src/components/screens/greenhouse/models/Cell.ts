@@ -24,4 +24,8 @@ export class Cell {
 		this.robot = robot
 		this.id = Math.random()
 	}
+
+	isEmpty(): boolean {
+		return this.tomato === null
+	}
 }

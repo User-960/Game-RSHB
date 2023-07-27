@@ -1,4 +1,4 @@
-import { FC, Fragment } from 'react'
+import { FC, Fragment, useState } from 'react'
 
 import { Board } from '../../models/Board'
 import { Cell } from '../../models/Cell'
@@ -12,6 +12,11 @@ interface IBoardProps {
 }
 
 const BoardComponent: FC<IBoardProps> = ({ board, setBoard }) => {
+	const updateBoard = () => {
+		const newBoard = board.getCopyBoard()
+		setBoard(newBoard)
+	}
+
 	return (
 		<div className={styles.board}>
 			{board.cells.map((row, index) => (

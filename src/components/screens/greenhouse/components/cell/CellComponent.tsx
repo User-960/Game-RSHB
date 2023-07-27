@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 import { Cell } from '../../models/Cell'
 
@@ -10,6 +10,10 @@ interface ICellComponentProps {
 }
 
 const CellComponent: FC<ICellComponentProps> = ({ cell }) => {
+	const [robotDirection, setRobotDirection] = useState<
+		string | null | undefined
+	>(null)
+
 	return (
 		<div className={styles.cell}>
 			{cell.tomato?.logo && (

@@ -8,5 +8,18 @@ export class RobotCollector extends Robot {
 		super(cell)
 		this.logo = robotCollector
 		this.name = RobotNames.COLLECTOR
+		this.direction = null
+	}
+
+	public update() {}
+
+	public getCoordinateX(): number {
+		let newCoordinate = this.cell.x
+		return (newCoordinate += 1)
+	}
+
+	public getCoordinateY(): number {
+		let newCoordinate = this.cell.y
+		return newCoordinate
 	}
 }
