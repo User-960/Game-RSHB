@@ -1,6 +1,8 @@
+import { NextPage } from 'next'
+
 import Start from '@/components/screens/start/Start'
 
-const StartPage = () => {
+const StartPage: NextPage = () => {
 	return <Start />
 }
 
