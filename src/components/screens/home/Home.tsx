@@ -54,6 +54,7 @@ const Home: FC = () => {
 		useState<boolean>(false)
 
 	const [isShowLoader, setIsShowLoader] = useState<boolean>(true)
+	// const { ref, isShow, setIsShow } = useOnClickOutside(isShowMenu)
 
 	const [statusUser, setStatusUser] = useState<number>(0)
 	const [isShowMenu, setIsShowMenu] = useState<boolean>(false)
