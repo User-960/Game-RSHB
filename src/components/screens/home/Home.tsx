@@ -6,6 +6,7 @@ import ButtonIcon from '@/components/ui/button/buttonIcon/ButtonIcon'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
 import { MapSvgSelector } from '@/components/ui/global-svg-selector/MapSvgSelector'
 import InfoBox from '@/components/ui/info-box/InfoBox'
+import Loader from '@/components/ui/loader/Loader'
 
 import Layout from '@/components/layout/Layout'
 import { GameContext } from '@/components/providers/GameProvider'
@@ -52,6 +53,8 @@ const Home: FC = () => {
 	const [isShowEmptyInventoryBox, setIsShowEmptyInventoryBox] =
 		useState<boolean>(false)
 
+	const [isShowLoader, setIsShowLoader] = useState<boolean>(true)
+
 	const [statusUser, setStatusUser] = useState<number>(0)
 	const [isShowMenu, setIsShowMenu] = useState<boolean>(false)
 	const [isShowShop, setIsShowShop] = useState<boolean>(false)
@@ -83,175 +86,193 @@ const Home: FC = () => {
 	useEffect(() => {
 		const localStatusUser = localStorage.getItem('statusUser')
 		if (Number(localStatusUser) === 1) {
+			setTimeout(() => {
+				setIsShowLoader(false)
+			}, 2000)
+
 			setIsShowEmptyInventoryBox(false)
 			setIsShowShopBox(false)
 			setIsShowIntroductionBox(false)
 			setIsShowRulesBox(false)
 			setIsShowLocationBox(false)
+		} else {
+			setTimeout(() => {
+				setIsShowLoader(false)
+			}, 2000)
 		}
 	}, [])
 
 	return (
 		<Layout meta={meta}>
-			<div className={styles.wrapper}>
-				<div className={styles.settings}>
-					<button
-						className={cn(styles.button)}
-						onClick={() => setIsShowMenu(prev => !prev)}
-					>
-						<GlobalSvgSelector id='settings' />
-					</button>
-					{isShowMenu && (
-						<div className={styles.blockMenuBar}>
-							<MenuBar />
+			{isShowLoader ? (
+				<div className={styles.loader}>
+					<Loader />
+				</div>
+			) : (
+				<div className={styles.wrapper}>
+					<div className={styles.settings}>
+						<button
+							className={cn(styles.button)}
+							onClick={() => setIsShowMenu(prev => !prev)}
+						>
+							<GlobalSvgSelector id='settings' />
+						</button>
+						{isShowMenu && (
+							<div className={styles.blockMenuBar}>
+								<MenuBar />
+							</div>
+						)}
+					</div>
+
+					<div className={styles.finance}>
+						<ButtonIcon name={`${String(wallet)} ${'₽'}`} size='medium'>
+							<GlobalSvgSelector id='wallet' />
+						</ButtonIcon>
+
+						<button
+							className={cn(styles.button, styles.buttonShop)}
+							onClick={() => setIsShowShop(prev => !prev)}
+						>
+							<GlobalSvgSelector id='shop' />
+						</button>
+
+						<button
+							className={cn(styles.button)}
+							onClick={() => setIsShowBank(prev => !prev)}
+						>
+							<GlobalSvgSelector id='bank' />
+						</button>
+					</div>
+
+					{isShowShop && (
+						<div className={styles.shop}>
+							<Shop onClick={() => setIsShowShop(prev => !prev)} />
 						</div>
 					)}
-				</div>
 
-				<div className={styles.finance}>
-					<ButtonIcon name={`${String(wallet)} ${'₽'}`} size='medium'>
-						<GlobalSvgSelector id='wallet' />
-					</ButtonIcon>
-
-					<button
-						className={cn(styles.button, styles.buttonShop)}
-						onClick={() => setIsShowShop(prev => !prev)}
-					>
-						<GlobalSvgSelector id='shop' />
-					</button>
-
-					<button
-						className={cn(styles.button)}
-						onClick={() => setIsShowBank(prev => !prev)}
-					>
-						<GlobalSvgSelector id='bank' />
-					</button>
-				</div>
-
-				{isShowShop && (
-					<div className={styles.shop}>
-						<Shop onClick={() => setIsShowShop(prev => !prev)} />
-					</div>
-				)}
-
-				{isShowBank && (
-					<div className={styles.bank}>
-						<Bank onClick={() => setIsShowBank(prev => !prev)} />
-					</div>
-				)}
-
-				<div className={styles.exit}>
-					<ButtonIcon name='Выход' size='medium' clickHandler={() => push('/')}>
-						<GlobalSvgSelector id='exit' />
-					</ButtonIcon>
-				</div>
-
-				<div className={styles.inventoryButton}>
-					<ButtonIcon
-						name='Инвентарь'
-						size='large'
-						clickHandler={() => setIsShowInventory(prev => !prev)}
-					>
-						<GlobalSvgSelector id='inventory' />
-					</ButtonIcon>
-				</div>
-
-				{isShowInventory && (
-					<div className={styles.inventory}>
-						<Inventory onClick={() => setIsShowInventory(prev => !prev)} />
-					</div>
-				)}
-
-				<div
-					className={styles.greenhouse}
-					onClick={() => {
-						if (inventory.length > 0) {
-							push('/greenhouse')
-						} else {
-							setIsShowLocationBox(false)
-							setIsShowInventory(true)
-							setIsShowEmptyInventoryBox(true)
-						}
-					}}
-				>
-					<MapSvgSelector id='greenhouse' />
-				</div>
-
-				{isShowIntroductionBox && statusUser === 0 && (
-					<div className={styles.infoBox}>
-						<InfoBox
-							title={introductionBox.title}
-							text={introductionBox.text}
-							size='mega'
-							onClick={() => {
-								setIsShowIntroductionBox(false)
-								setIsShowRulesBox(true)
-							}}
-						/>
-					</div>
-				)}
-
-				{isShowRulesBox && statusUser === 0 && (
-					<div className={styles.infoBox}>
-						<InfoBox
-							title={rulesBox.title}
-							text={rulesBox.text}
-							size='mega'
-							onClick={() => {
-								setIsShowRulesBox(false)
-								setIsShowLocationBox(true)
-							}}
-						/>
-					</div>
-				)}
-
-				{isShowLocationBox && statusUser === 0 && (
-					<div className={styles.infoBoxLocation}>
-						<InfoBox
-							text={'Кликни на первую локацию'}
-							size='small'
-							button={false}
-							onClick={() => {
-								setIsShowRulesBox(false)
-							}}
-						/>
-
-						<div className={styles.arrowDownGreen}>
-							<GlobalSvgSelector id='arrowDownGreen' />
+					{isShowBank && (
+						<div className={styles.bank}>
+							<Bank onClick={() => setIsShowBank(prev => !prev)} />
 						</div>
-					</div>
-				)}
+					)}
 
-				{isShowEmptyInventoryBox && statusUser === 0 && (
-					<div className={styles.infoBoxEmptyInventory}>
-						<InfoBox
-							text={emptyInventoryBox.text}
+					<div className={styles.exit}>
+						<ButtonIcon
+							name='Выход'
 							size='medium'
-							button={false}
-						/>
-
-						<div className={styles.arrowRightGreen}>
-							<GlobalSvgSelector id='arrowRightGreen' />
-						</div>
+							clickHandler={() => push('/')}
+						>
+							<GlobalSvgSelector id='exit' />
+						</ButtonIcon>
 					</div>
-				)}
 
-				{isShowShopBox &&
-					statusUser === 0 &&
-					!isShowBank &&
-					!isShowEmptyInventoryBox &&
-					!isShowIntroductionBox &&
-					!isShowRulesBox &&
-					!isShowLocationBox && (
-						<div className={styles.infoBoxShop}>
-							<InfoBox text={shopBox.text} size='small' button={false} />
+					<div className={styles.inventoryButton}>
+						<ButtonIcon
+							name='Инвентарь'
+							size='large'
+							clickHandler={() => setIsShowInventory(prev => !prev)}
+						>
+							<GlobalSvgSelector id='inventory' />
+						</ButtonIcon>
+					</div>
+
+					{isShowInventory && (
+						<div className={styles.inventory}>
+							<Inventory onClick={() => setIsShowInventory(prev => !prev)} />
+						</div>
+					)}
+
+					<div
+						className={styles.greenhouse}
+						onClick={() => {
+							if (inventory.length > 0) {
+								push('/greenhouse')
+							} else {
+								setIsShowLocationBox(false)
+								setIsShowInventory(true)
+								setIsShowEmptyInventoryBox(true)
+							}
+						}}
+					>
+						<MapSvgSelector id='greenhouse' />
+					</div>
+
+					{isShowIntroductionBox && statusUser === 0 && (
+						<div className={styles.infoBox}>
+							<InfoBox
+								title={introductionBox.title}
+								text={introductionBox.text}
+								size='mega'
+								onClick={() => {
+									setIsShowIntroductionBox(false)
+									setIsShowRulesBox(true)
+								}}
+							/>
+						</div>
+					)}
+
+					{isShowRulesBox && statusUser === 0 && (
+						<div className={styles.infoBox}>
+							<InfoBox
+								title={rulesBox.title}
+								text={rulesBox.text}
+								size='mega'
+								onClick={() => {
+									setIsShowRulesBox(false)
+									setIsShowLocationBox(true)
+								}}
+							/>
+						</div>
+					)}
+
+					{isShowLocationBox && statusUser === 0 && (
+						<div className={styles.infoBoxLocation}>
+							<InfoBox
+								text={'Кликни на первую локацию'}
+								size='small'
+								button={false}
+								onClick={() => {
+									setIsShowRulesBox(false)
+								}}
+							/>
+
+							<div className={styles.arrowDownGreen}>
+								<GlobalSvgSelector id='arrowDownGreen' />
+							</div>
+						</div>
+					)}
+
+					{isShowEmptyInventoryBox && statusUser === 0 && (
+						<div className={styles.infoBoxEmptyInventory}>
+							<InfoBox
+								text={emptyInventoryBox.text}
+								size='medium'
+								button={false}
+							/>
 
 							<div className={styles.arrowRightGreen}>
 								<GlobalSvgSelector id='arrowRightGreen' />
 							</div>
 						</div>
 					)}
-			</div>
+
+					{isShowShopBox &&
+						statusUser === 0 &&
+						!isShowBank &&
+						!isShowEmptyInventoryBox &&
+						!isShowIntroductionBox &&
+						!isShowRulesBox &&
+						!isShowLocationBox && (
+							<div className={styles.infoBoxShop}>
+								<InfoBox text={shopBox.text} size='small' button={false} />
+
+								<div className={styles.arrowRightGreen}>
+									<GlobalSvgSelector id='arrowRightGreen' />
+								</div>
+							</div>
+						)}
+				</div>
+			)}
 		</Layout>
 	)
 }

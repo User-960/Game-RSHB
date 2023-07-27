@@ -1,5 +1,13 @@
 @import 'src/assets/styles/variables';
 
+.loader {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .wrapper {
 	position: relative;
 	height: 95vh;
