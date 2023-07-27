@@ -5,6 +5,7 @@ import ButtonIcon from '@/components/ui/button/buttonIcon/ButtonIcon'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
 import { GreenhouseSvgSelector } from '@/components/ui/global-svg-selector/GreenhouseSvgSelector'
 import RulesGame from '@/components/ui/rules-game/RulesGame'
+import VictoryBox from '@/components/ui/victory-box/victoryBox'
 
 import BoardComponent from './components/board/BoardComponent'
 import Layout from '@/components/layout/Layout'
@@ -17,6 +18,10 @@ const textRules = {
 	text: 'Управляй роботом - собирателем урожая (двигай его влево или вправо), выбирай правильный тип плодов помидора и минуй еще зелёные или переспелые плоды. За спелые томаты ты будешь получать монеты, которые можешь потратить в магазине или погасить кредит в банке.'
 }
 
+const victoryText = {
+	text: 'Ты собрал все зрелые томаты,  при доставке они не потеряют своих вкусовых свойств.'
+}
+
 const Greenhouse: FC = () => {
 	const meta: IMeta = {
 		title: 'Greenhouse',
@@ -24,6 +29,7 @@ const Greenhouse: FC = () => {
 	}
 
 	const [isShowRulesGameBox, setIsShowRulesGameBox] = useState<boolean>(true)
+	const [isShowVictoryBox, setIsShowVictoryBox] = useState<boolean>(false)
 	const [board, setBoard] = useState<Board>(new Board())
 	const { push } = useRouter()
 
@@ -53,10 +59,11 @@ const Greenhouse: FC = () => {
 			<div className={styles.wrapper}>
 				<div className={styles.leftPart}>
 					<GreenhouseSvgSelector id='greenhouseLeft' />
-					<ButtonIcon size='min' clickHandler={() => push('/home')}>
+					<ButtonIcon size='min' clickHandler={() => setIsShowVictoryBox(true)}>
 						<GlobalSvgSelector id='exit' />
 					</ButtonIcon>
 				</div>
+
 				<div className={styles.board}>
 					<BoardComponent board={board} setBoard={setBoard} />
 				</div>
@@ -72,6 +79,16 @@ const Greenhouse: FC = () => {
 					<GreenhouseSvgSelector id='greenhouseRight' />
 				</div>
 			</div>
+
+			{isShowVictoryBox && (
+				<div className={styles.blockRulesGame}>
+					<VictoryBox
+						title='Результат'
+						text={victoryText.text}
+						clickHandler={() => setIsShowVictoryBox(prev => !prev)}
+					/>
+				</div>
+			)}
 		</Layout>
 	)
 }
