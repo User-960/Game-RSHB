@@ -1,5 +1,6 @@
 import { Cell } from './Cell'
 import { Colors } from './Colors'
+import { RobotCollector } from './robots/RobotCollector'
 import { TomatoDamaged } from './tomatoes/TomatoDamaged'
 import { TomatoGreen } from './tomatoes/TomatoGreen'
 import { TomatoRipe } from './tomatoes/TomatoRipe'
@@ -46,6 +47,10 @@ export class Board {
 	private addTomatoDamaged() {
 		new TomatoDamaged(Colors.DARK, this.getCell(12, 23))
 		new TomatoDamaged(Colors.DARK, this.getCell(17, 17))
+	}
+
+	public addRobotCollector() {
+		new RobotCollector(this.getCell(17, 33))
 	}
 
 	public addTomatoes() {

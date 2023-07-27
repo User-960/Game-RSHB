@@ -15,6 +15,10 @@ const CellComponent: FC<ICellComponentProps> = ({ cell }) => {
 			{cell.tomato?.logo && (
 				<Image src={cell.tomato?.logo} alt={cell.tomato?.name} />
 			)}
+
+			{cell.robot?.logo && (
+				<Image src={cell.robot?.logo} alt={cell.robot?.name} />
+			)}
 		</div>
 	)
 }

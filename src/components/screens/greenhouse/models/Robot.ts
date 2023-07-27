@@ -1,15 +1,27 @@
-import { Board } from './Board'
+import robotCollector from 'public/images/robots-for-game/robot-greenhouse.svg'
+
+import { Cell } from './Cell'
+
+export enum RobotNames {
+	ROBOT = 'Робот',
+	COLLECTOR = 'Собиратель'
+}
 
 export class Robot {
-	readonly x: number
-	readonly y: number
-	board: Board
-	id: number // for react keys
+	cell: Cell
+	logo: typeof robotCollector | null
+	name: RobotNames
+	id: number
 
-	constructor(board: Board, x: number, y: number) {
-		this.x = x
-		this.y = y
-		this.board = board
+	constructor(cell: Cell) {
+		this.cell = cell
+		this.cell.robot = this
+		this.logo = null
+		this.name = RobotNames.ROBOT
 		this.id = Math.random()
+	}
+
+	collect() {
+		return true
 	}
 }
