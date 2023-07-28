@@ -114,7 +114,7 @@
 	& .bank {
 		position: absolute;
 		left: 0;
-		right: 0;
+		right: 10px;
 		top: 65px;
 		bottom: 0;
 		margin: auto;
@@ -123,20 +123,21 @@
 
 	& .inventory {
 		position: absolute;
-		right: 0;
+		right: 10px;
 		bottom: 120px;
 		z-index: 20;
 	}
 
 	& .inventoryButton {
 		position: absolute;
-		right: 0;
+		right: 10px;
 		bottom: 20px;
 		z-index: 20;
 	}
 
 	& .exit {
 		position: absolute;
+		left: 10px;
 		bottom: 20px;
 		z-index: 18;
 	}

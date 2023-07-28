@@ -33,6 +33,11 @@ const emptyInventoryBox = {
 	text: 'Упс! Ты не можешь открыть локацию, пока у тебя нет необходимого оборудования. Техника продается в магазине, но у тебя нет монет, поэтому предлагаем тебе взять рассрочку в банке.'
 }
 
+const finishBox = {
+	title: 'Дорогой друг,',
+	text: 'Поздравляю тебя, ты прошел всю игру, успешно использовал современную технику и помог фермерам собрать большой урожай. Теперь его хватит на всех жителей городов и деревень с избытком!'
+}
+
 const shopBox = {
 	text: 'Деньги перечисленны на счет, теперь ты можешь идти за покупками.'
 }
@@ -50,6 +55,7 @@ const Home: FC = () => {
 	const [isShowRulesBox, setIsShowRulesBox] = useState<boolean>(false)
 	const [isShowLocationBox, setIsShowLocationBox] = useState<boolean>(false)
 	const [isShowShopBox, setIsShowShopBox] = useState<boolean>(false)
+	const [isShowFinishBox, setIsShowFinishBox] = useState<boolean>(false)
 	const [isShowEmptyInventoryBox, setIsShowEmptyInventoryBox] =
 		useState<boolean>(false)
 
@@ -77,7 +83,9 @@ const Home: FC = () => {
 	}, [isShowBank])
 
 	useEffect(() => {
-		console.log(wallet)
+		if (wallet === 5000) {
+			setIsShowFinishBox(true)
+		}
 	}, [wallet])
 
 	useEffect(() => {
@@ -298,6 +306,21 @@ const Home: FC = () => {
 								</div>
 							</div>
 						)}
+
+					{isShowFinishBox && (
+						<div className={styles.infoBox}>
+							<InfoBox
+								title={finishBox.title}
+								text={finishBox.text}
+								size='mega'
+								button={true}
+								onClick={() => {
+									setIsShowFinishBox(false)
+									push('/finish')
+								}}
+							/>
+						</div>
+					)}
 				</div>
 			)}
 		</Layout>
