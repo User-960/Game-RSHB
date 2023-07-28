@@ -30,7 +30,7 @@ const rulesBox = {
 }
 
 const emptyInventoryBox = {
-	text: 'Упс! Ты не можешь открыть первую локацию, пока у тебя нет необходимого оборудования. Техника продается в магазине, но у тебя нет монет, поэтому предлагаем тебе взять рассрочку в банке.'
+	text: 'Упс! Ты не можешь открыть локацию, пока у тебя нет необходимого оборудования. Техника продается в магазине, но у тебя нет монет, поэтому предлагаем тебе взять рассрочку в банке.'
 }
 
 const shopBox = {
@@ -194,8 +194,34 @@ const Home: FC = () => {
 						<MapSvgSelector id='greenhouse' />
 					</div>
 
-					<div className={styles.field} onClick={() => push('/greenhouse')}>
+					<div
+						className={styles.field}
+						onClick={() => {
+							if (inventory.length > 1) {
+								push('/field')
+							} else {
+								setIsShowLocationBox(false)
+								setIsShowInventory(true)
+								setIsShowEmptyInventoryBox(true)
+							}
+						}}
+					>
 						<MapSvgSelector id='field' />
+					</div>
+
+					<div
+						className={styles.garden}
+						onClick={() => {
+							if (inventory.length > 2) {
+								push('/garden')
+							} else {
+								setIsShowLocationBox(false)
+								setIsShowInventory(true)
+								setIsShowEmptyInventoryBox(true)
+							}
+						}}
+					>
+						<MapSvgSelector id='garden' />
 					</div>
 
 					{isShowIntroductionBox && statusUser === 0 && (

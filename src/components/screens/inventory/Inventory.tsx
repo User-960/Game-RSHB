@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import imgRobotFertilizer from 'public/images/automated-fertilizer-system.svg'
 import imgRobotCollector from 'public/images/robot-collector.svg'
+import imgRobotSound from 'public/images/sound-deterrent-device.svg'
 import { Dispatch, FC, SetStateAction, useContext, useEffect } from 'react'
 
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
@@ -29,7 +29,7 @@ const Inventory: FC<IInventoryProps> = ({ onClick }) => {
 				{inventory.map((robot: any) => (
 					<li className={styles.item} key={robot.id}>
 						<Image
-							src={robot.id === 1 ? imgRobotCollector : imgRobotFertilizer}
+							src={robot.id === 1 ? imgRobotCollector : imgRobotSound}
 							alt={robot.name}
 							width={124}
 							height={124}

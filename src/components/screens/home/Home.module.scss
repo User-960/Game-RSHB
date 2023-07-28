@@ -168,3 +168,16 @@
 		color: $accent-green-light;
 	}
 }
+
+.garden {
+	position: absolute;
+	top: 0;
+	color: #b8f6a9;
+	cursor: pointer;
+	z-index: 0;
+	// color: $accent-green;
+
+	&:hover {
+		color: $accent-green-light;
+	}
+}
