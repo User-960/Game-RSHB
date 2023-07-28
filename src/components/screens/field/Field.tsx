@@ -52,7 +52,7 @@ const Field: FC = () => {
 				<div className={styles.rightPart}>
 					<div className={styles.rightPartScore}>
 						<ButtonIcon size='small' name='12/20'>
-							<GlobalSvgSelector id='iconTomato' />
+							<GlobalSvgSelector id='iconPest' />
 						</ButtonIcon>
 						<ButtonIcon size='small' name='1200'>
 							<GlobalSvgSelector id='iconWallet' />

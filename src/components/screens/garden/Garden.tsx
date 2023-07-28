@@ -12,17 +12,17 @@ import { IMeta } from '@/components/seo/meta.interface'
 import styles from './Garden.module.scss'
 
 const textRules = {
-	text: 'С помощью звукового отпугивающего устройства защити посев пшеницы от саранчи. Направляй действие звуковой волны на возникающие угрозы (кликни на них). За уничтоженного вредителя ты будешь получать монеты, которые можешь потратить в магазине или погасить кредит в банке.'
+	text: 'Примени специальные удобрения для повышения урожайности фруктовых деревьев. Управляй роботом для подсыпки удобрений растениям, на которых мало плодов (кликай на деревья). За удобренное растение ты будешь получать монеты, которые можешь потратить в магазине или погасить кредит в банке.'
 }
 
 const victoryText = {
-	text: 'Ты избавился от всей саранчи на поле, при сборе урожая пшеница будет наилучшего качества.'
+	text: 'Ты удобрил все деревья с яблоками, при доставке они не потеряют своих вкусовых свойств.'
 }
 
 const Garden: FC = () => {
 	const meta: IMeta = {
-		title: 'Field',
-		description: 'Second level in RSHB Game'
+		title: 'Garden',
+		description: 'Third level in RSHB Game'
 	}
 
 	const [isShowRulesGameBox, setIsShowRulesGameBox] = useState<boolean>(true)
@@ -52,7 +52,7 @@ const Garden: FC = () => {
 				<div className={styles.rightPart}>
 					<div className={styles.rightPartScore}>
 						<ButtonIcon size='small' name='12/20'>
-							<GlobalSvgSelector id='iconTomato' />
+							<GlobalSvgSelector id='iconTree' />
 						</ButtonIcon>
 						<ButtonIcon size='small' name='1200'>
 							<GlobalSvgSelector id='iconWallet' />
