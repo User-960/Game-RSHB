@@ -70,7 +70,7 @@ const Home: FC = () => {
 	const { push } = useRouter()
 
 	useEffect(() => {
-		const localStatusUser = localStorage.getItem('statusUser')
+		// const localStatusUser = localStorage.getItem('statusUser')
 		if (wallet === 0) {
 			setIsShowInventory(false)
 			setIsShowEmptyInventoryBox(false)
@@ -79,7 +79,7 @@ const Home: FC = () => {
 			setStatusUser(1)
 			setIsShowInventory(false)
 			setIsShowEmptyInventoryBox(false)
-			setIsShowShopBox(false)
+			setIsShowShopBox(true)
 		}
 	}, [isShowBank])
 
@@ -299,21 +299,15 @@ const Home: FC = () => {
 						</div>
 					)}
 
-					{isShowShopBox &&
-						inventory.length === 0 &&
-						!isShowBank &&
-						!isShowEmptyInventoryBox &&
-						!isShowIntroductionBox &&
-						!isShowRulesBox &&
-						!isShowLocationBox && (
-							<div className={styles.infoBoxShop}>
-								<InfoBox text={shopBox.text} size='small' button={false} />
+					{isShowShopBox && inventory.length === 0 && (
+						<div className={styles.infoBoxShop}>
+							<InfoBox text={shopBox.text} size='small' button={false} />
 
-								<div className={styles.arrowRightGreen}>
-									<GlobalSvgSelector id='arrowRightGreen' />
-								</div>
+							<div className={styles.arrowRightGreen}>
+								<GlobalSvgSelector id='arrowRightGreen' />
 							</div>
-						)}
+						</div>
+					)}
 
 					{isShowFinishBox && (
 						<div className={styles.infoBox}>
