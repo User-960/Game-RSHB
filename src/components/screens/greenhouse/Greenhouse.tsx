@@ -19,7 +19,10 @@ const textRules = {
 }
 
 const victoryText = {
-	text: 'Ты собрал все зрелые томаты, при доставке они не потеряют своих вкусовых свойств.'
+	text: 'Ты собрал все зрелые томаты, при доставке они не потеряют своих вкусовых свойств.',
+	result: 'Собрано томатов:',
+	pay: 2000,
+	icon: 'iconTomato'
 }
 
 const Greenhouse: FC = () => {
@@ -85,7 +88,9 @@ const Greenhouse: FC = () => {
 					<VictoryBox
 						title='Результат'
 						text={victoryText.text}
-						pay={2000}
+						pay={victoryText.pay}
+						result={victoryText.result}
+						icon={victoryText.icon}
 						clickHandler={() => setIsShowVictoryBox(prev => !prev)}
 					/>
 				</div>

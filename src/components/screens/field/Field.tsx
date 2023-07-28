@@ -16,7 +16,10 @@ const textRules = {
 }
 
 const victoryText = {
-	text: 'Ты избавился от всей саранчи на поле, при сборе урожая пшеница будет наилучшего качества.'
+	text: 'Ты избавился от всей саранчи на поле, при сборе урожая пшеница будет наилучшего качества.',
+	result: 'Обезврежено вредителей:',
+	pay: 3000,
+	icon: 'iconPest'
 }
 
 const Field: FC = () => {
@@ -67,7 +70,9 @@ const Field: FC = () => {
 					<VictoryBox
 						title='Результат'
 						text={victoryText.text}
-						pay={3000}
+						pay={victoryText.pay}
+						result={victoryText.result}
+						icon={victoryText.icon}
 						clickHandler={() => setIsShowVictoryBox(prev => !prev)}
 					/>
 				</div>

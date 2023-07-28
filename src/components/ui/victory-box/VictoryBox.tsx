@@ -12,6 +12,8 @@ interface IVictoryBoxProps {
 	title?: string
 	text: string
 	pay: number
+	icon: string
+	result: string
 	clickHandler: () => any
 }
 
@@ -19,6 +21,8 @@ const VictoryBox: FC<IVictoryBoxProps> = ({
 	title,
 	text,
 	pay,
+	icon,
+	result,
 	clickHandler
 }) => {
 	const { setWallet } = useContext(GameContext)
@@ -32,9 +36,9 @@ const VictoryBox: FC<IVictoryBoxProps> = ({
 			<div className={styles.statistics}>
 				<ul className={styles.list}>
 					<li className={styles.item}>
-						<p className={styles.text}>Собрано томатов:</p>
+						<p className={styles.text}>{result}</p>
 						<div className={styles.result}>
-							<GlobalSvgSelector id='iconTomato' />
+							<GlobalSvgSelector id={icon} />
 							<p>20/20</p>
 						</div>
 					</li>
@@ -43,7 +47,7 @@ const VictoryBox: FC<IVictoryBoxProps> = ({
 						<p className={styles.text}>Заработано монет:</p>
 						<div className={styles.result}>
 							<GlobalSvgSelector id='iconWallet' />
-							<p>2000 ₽</p>
+							<p>{`${pay} ₽`}</p>
 						</div>
 					</li>
 				</ul>

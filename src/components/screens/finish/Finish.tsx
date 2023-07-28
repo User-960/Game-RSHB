@@ -17,13 +17,6 @@ const meta: IMeta = {
 	description: 'Finish the game'
 }
 
-// const statistics = [
-// 	{
-// 		text: 'Собрано томатов:',
-// 		result: '20/20'
-// 	}
-// ]
-
 const Finish: FC = () => {
 	const { push } = useRouter()
 	const [isShowButton, setIsShowButton] = useState<boolean>(true)
