@@ -15,7 +15,7 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-image: url(../../../../public/images/map-Greenhouse.svg);
+	background-image: url(../../../../public/images/map.svg);
 
 	& .button {
 		border: none;
@@ -131,6 +131,7 @@
 		position: absolute;
 		right: 0;
 		bottom: 20px;
+		z-index: 20;
 	}
 
 	& .exit {
@@ -147,6 +148,20 @@
 	color: #b8f6a9;
 	cursor: pointer;
 	z-index: 10;
+	// color: $accent-green;
+
+	&:hover {
+		color: $accent-green-light;
+	}
+}
+
+.field {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	color: #b8f6a9;
+	cursor: pointer;
+	z-index: 0;
 	// color: $accent-green;
 
 	&:hover {

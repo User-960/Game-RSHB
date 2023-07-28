@@ -184,13 +184,6 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 
 						<LinkComponent link='/something' text='Узнать больше' />
 
-						{/* <ButtonText
-							disabled={wallet === 2000 ? false : true}
-							blocked={wallet === 2000 ? false : true}
-						>
-							Заблокировано
-						</ButtonText> */}
-
 						{inventory.length > 1 ? (
 							<ButtonText bought={true}>В инвентаре</ButtonText>
 						) : (

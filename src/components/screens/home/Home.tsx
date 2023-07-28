@@ -194,6 +194,10 @@ const Home: FC = () => {
 						<MapSvgSelector id='greenhouse' />
 					</div>
 
+					<div className={styles.field} onClick={() => push('/greenhouse')}>
+						<MapSvgSelector id='field' />
+					</div>
+
 					{isShowIntroductionBox && statusUser === 0 && (
 						<div className={styles.infoBox}>
 							<InfoBox
