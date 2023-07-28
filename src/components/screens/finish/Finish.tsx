@@ -63,6 +63,7 @@ const Finish: FC = () => {
 						<li className={styles.item}>
 							<p className={styles.text}>Общая сумма кредитов c %:</p>
 							<div className={styles.result}>
+								<GlobalSvgSelector id='bank' />
 								<p>3500 ₽</p>
 							</div>
 						</li>
@@ -90,7 +91,7 @@ const Finish: FC = () => {
 
 				<div className={styles.blockButton}>
 					{isShowButton && (
-						<ButtonText clickHandler={() => push('/')}>Поделится</ButtonText>
+						<ButtonText clickHandler={() => push('/')}>Поделиться</ButtonText>
 					)}
 				</div>
 			</div>

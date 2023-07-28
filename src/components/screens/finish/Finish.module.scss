@@ -98,10 +98,13 @@
 			}
 
 			& .result {
-				width: 108px;
+				width: 122px;
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
+				> svg {
+					color: $accent-green;
+				}
 			}
 		}
 	}
