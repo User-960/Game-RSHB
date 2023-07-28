@@ -5,7 +5,6 @@ import { Dispatch, FC, SetStateAction, useContext, useEffect } from 'react'
 
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
 
-import { IRobot } from '@/components/interfaces/robots'
 import { GameContext } from '@/components/providers/GameProvider'
 
 import styles from './Inventory.module.scss'

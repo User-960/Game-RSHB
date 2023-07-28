@@ -1,5 +1,4 @@
-import { useRouter } from 'next/router'
-import { FC, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
 
 import ButtonIcon from '@/components/ui/button/buttonIcon/ButtonIcon'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
@@ -7,43 +6,27 @@ import { GreenhouseSvgSelector } from '@/components/ui/global-svg-selector/Green
 import RulesGame from '@/components/ui/rules-game/RulesGame'
 import VictoryBox from '@/components/ui/victory-box/VictoryBox'
 
-import BoardComponent from './components/board/BoardComponent'
 import Layout from '@/components/layout/Layout'
 import { IMeta } from '@/components/seo/meta.interface'
 
-import styles from './Greenhouse.module.scss'
-import { Board } from './models/Board'
+import styles from './Field.module.scss'
 
 const textRules = {
-	text: 'Управляй роботом - собирателем урожая (двигай его влево или вправо), выбирай правильный тип плодов помидора и минуй еще зелёные или переспелые плоды. За спелые томаты ты будешь получать монеты, которые можешь потратить в магазине или погасить кредит в банке.'
+	text: 'С помощью звукового отпугивающего устройства защити посев пшеницы от саранчи. Направляй действие звуковой волны на возникающие угрозы (кликни на них). За уничтоженного вредителя ты будешь получать монеты, которые можешь потратить в магазине или погасить кредит в банке.'
 }
 
 const victoryText = {
-	text: 'Ты собрал все зрелые томаты,  при доставке они не потеряют своих вкусовых свойств.'
+	text: 'Ты избавился от всей саранчи на поле, при сборе урожая пшеница будет наилучшего качества.'
 }
 
-const Greenhouse: FC = () => {
+const Field: FC = () => {
 	const meta: IMeta = {
-		title: 'Greenhouse',
-		description: 'First level in RSHB Game'
+		title: 'Field',
+		description: 'Second level in RSHB Game'
 	}
 
 	const [isShowRulesGameBox, setIsShowRulesGameBox] = useState<boolean>(true)
 	const [isShowVictoryBox, setIsShowVictoryBox] = useState<boolean>(false)
-	const [board, setBoard] = useState<Board>(new Board())
-	const { push } = useRouter()
-
-	useEffect(() => {
-		restart()
-	}, [])
-
-	const restart = () => {
-		const newBoard = new Board()
-		newBoard.initCells()
-		newBoard.addTomatoes()
-		newBoard.addRobotCollector()
-		setBoard(newBoard)
-	}
 
 	return (
 		<Layout meta={meta}>
@@ -64,9 +47,8 @@ const Greenhouse: FC = () => {
 					</ButtonIcon>
 				</div>
 
-				<div className={styles.board}>
-					<BoardComponent board={board} setBoard={setBoard} />
-				</div>
+				<div className={styles.board}></div>
+
 				<div className={styles.rightPart}>
 					<div className={styles.rightPartScore}>
 						<ButtonIcon size='small' name='12/20'>
@@ -85,7 +67,7 @@ const Greenhouse: FC = () => {
 					<VictoryBox
 						title='Результат'
 						text={victoryText.text}
-						pay={2000}
+						pay={3000}
 						clickHandler={() => setIsShowVictoryBox(prev => !prev)}
 					/>
 				</div>
@@ -94,4 +76,4 @@ const Greenhouse: FC = () => {
 	)
 }
 
-export default Greenhouse
+export default Field

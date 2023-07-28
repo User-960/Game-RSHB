@@ -11,10 +11,16 @@ import styles from './VictoryBox.module.scss'
 interface IVictoryBoxProps {
 	title?: string
 	text: string
+	pay: number
 	clickHandler: () => any
 }
 
-const VictoryBox: FC<IVictoryBoxProps> = ({ title, text, clickHandler }) => {
+const VictoryBox: FC<IVictoryBoxProps> = ({
+	title,
+	text,
+	pay,
+	clickHandler
+}) => {
 	const { setWallet } = useContext(GameContext)
 
 	const { push } = useRouter()
@@ -52,7 +58,7 @@ const VictoryBox: FC<IVictoryBoxProps> = ({ title, text, clickHandler }) => {
 					<button
 						className={styles.buttonExit}
 						onClick={() => {
-							setWallet(2000)
+							setWallet(pay)
 							push('/home')
 						}}
 					>

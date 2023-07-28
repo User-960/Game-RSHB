@@ -1,9 +1,9 @@
 import { NextPage } from 'next'
 
-import Greenhouse from '@/components/screens/greenhouse/Greenhouse'
+import Field from '@/components/screens/field/Field'
 
-const GreenhousePage: NextPage = () => {
-	return <Greenhouse />
+const FieldPage: NextPage = () => {
+	return <Field />
 }
 
-export default GreenhousePage
+export default FieldPage
