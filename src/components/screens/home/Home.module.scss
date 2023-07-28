@@ -2,7 +2,7 @@
 
 .loader {
 	width: 100%;
-	height: 100vh;
+	height: $desktop-height;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -10,6 +10,7 @@
 
 .wrapper {
 	position: relative;
+	max-height: $desktop-height;
 	height: 95vh;
 
 	background-size: cover;
