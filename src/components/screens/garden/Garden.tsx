@@ -62,7 +62,7 @@ const Garden: FC = () => {
 						>
 							<a
 								data-fancybox='gallery'
-								href='https://www.youtube.com/watch?v=QEzJl7fi5B8'
+								href='https://www.youtube.com/watch?v=bV7vt6Q1MB8'
 							>
 								<img
 									className={styles.sectionVideoImage}

@@ -71,16 +71,23 @@ const Home: FC = () => {
 
 	useEffect(() => {
 		const localStatusUser = localStorage.getItem('statusUser')
-		if (wallet === 0 && Number(localStatusUser) !== 1) {
+		if (wallet === 0) {
 			setIsShowInventory(false)
 			setIsShowEmptyInventoryBox(false)
-			setIsShowShopBox(true)
+			// setIsShowShopBox(true)
 		} else {
+			setStatusUser(1)
 			setIsShowInventory(false)
 			setIsShowEmptyInventoryBox(false)
 			setIsShowShopBox(false)
 		}
 	}, [isShowBank])
+
+	useEffect(() => {
+		if (statusUser === 1) {
+			localStorage.setItem('statusUser', String(statusUser))
+		}
+	}, [statusUser])
 
 	useEffect(() => {
 		if (wallet === 5000) {
@@ -90,13 +97,14 @@ const Home: FC = () => {
 
 	useEffect(() => {
 		const localStatusUser = localStorage.getItem('statusUser')
-		if (Number(localStatusUser) === 1) {
+		if (wallet > 0 || Number(localStatusUser) === 1) {
+			setStatusUser(1)
 			setTimeout(() => {
 				setIsShowLoader(false)
 			}, 2000)
 
 			setIsShowEmptyInventoryBox(false)
-			setIsShowShopBox(false)
+			// setIsShowShopBox(false)
 			setIsShowIntroductionBox(false)
 			setIsShowRulesBox(false)
 			setIsShowLocationBox(false)
@@ -232,7 +240,7 @@ const Home: FC = () => {
 						<MapSvgSelector id='garden' />
 					</div>
 
-					{isShowIntroductionBox && statusUser === 0 && (
+					{isShowIntroductionBox && (
 						<div className={styles.infoBox}>
 							<InfoBox
 								title={introductionBox.title}
@@ -246,7 +254,7 @@ const Home: FC = () => {
 						</div>
 					)}
 
-					{isShowRulesBox && statusUser === 0 && (
+					{isShowRulesBox && (
 						<div className={styles.infoBox}>
 							<InfoBox
 								title={rulesBox.title}
@@ -260,7 +268,7 @@ const Home: FC = () => {
 						</div>
 					)}
 
-					{isShowLocationBox && statusUser === 0 && (
+					{isShowLocationBox && (
 						<div className={styles.infoBoxLocation}>
 							<InfoBox
 								text={'Кликни на первую локацию'}
@@ -277,7 +285,7 @@ const Home: FC = () => {
 						</div>
 					)}
 
-					{isShowEmptyInventoryBox && statusUser === 0 && (
+					{isShowEmptyInventoryBox && (
 						<div className={styles.infoBoxEmptyInventory}>
 							<InfoBox
 								text={emptyInventoryBox.text}
@@ -292,7 +300,7 @@ const Home: FC = () => {
 					)}
 
 					{isShowShopBox &&
-						statusUser === 0 &&
+						inventory.length === 0 &&
 						!isShowBank &&
 						!isShowEmptyInventoryBox &&
 						!isShowIntroductionBox &&

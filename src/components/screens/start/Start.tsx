@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import imgRobot from 'public/images/robot.svg'
 import imgRobotBack from 'public/images/robotBackBlur.svg'
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 import ButtonText from '@/components/ui/button/buttonText/ButtonText'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
@@ -18,7 +18,7 @@ const meta: IMeta = {
 }
 
 const Start: FC = () => {
-	const { push } = useRouter()
+	const { push, reload } = useRouter()
 	const [isShowButton, setIsShowButton] = useState<boolean>(true)
 
 	return (
