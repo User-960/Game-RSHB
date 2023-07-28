@@ -3,6 +3,7 @@ import { FC, useState } from 'react'
 import ButtonIcon from '@/components/ui/button/buttonIcon/ButtonIcon'
 import { GlobalSvgSelector } from '@/components/ui/global-svg-selector/GlobalSvgSelector'
 import { GreenhouseSvgSelector } from '@/components/ui/global-svg-selector/GreenhouseSvgSelector'
+import Fancybox from '@/components/ui/popup/Fancybox'
 import RulesGame from '@/components/ui/rules-game/RulesGame'
 import VictoryBox from '@/components/ui/victory-box/VictoryBox'
 
@@ -50,7 +51,34 @@ const Garden: FC = () => {
 					</ButtonIcon>
 				</div>
 
-				<div className={styles.board}></div>
+				<div className={styles.board}>
+					<section className={styles.sectionVideo}>
+						<Fancybox
+							options={{
+								Carousel: {
+									infinite: false
+								}
+							}}
+						>
+							<a
+								data-fancybox='gallery'
+								href='https://www.youtube.com/watch?v=QEzJl7fi5B8'
+							>
+								<img
+									className={styles.sectionVideoImage}
+									src='images/garden-video.svg'
+									width='100%'
+									height='100%'
+								/>
+								<img
+									className={styles.sectionVideoBtn}
+									src='images/btn-play.svg'
+									alt='play'
+								/>
+							</a>
+						</Fancybox>
+					</section>
+				</div>
 
 				<div className={styles.rightPart}>
 					<div className={styles.rightPartScore}>

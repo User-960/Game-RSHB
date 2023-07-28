@@ -156,6 +156,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fancyapps/fancybox@npm:^3.5.7":
+  version: 3.5.7
+  resolution: "@fancyapps/fancybox@npm:3.5.7"
+  peerDependencies:
+    jquery: ">=1.9.0"
+  checksum: bb51bfa137aa681b3a9278f7eca291f4230f50f79d370401f48a280849ce786e6dc0e1f06feb8dd26e1ab51bebfe1c0d7153d5334534eb5014fe3013da9e1543
+  languageName: node
+  linkType: hard
+
+"@fancyapps/ui@npm:^5.0.20":
+  version: 5.0.20
+  resolution: "@fancyapps/ui@npm:5.0.20"
+  checksum: 28f4cee4feaa47d5c318a1b0432c44300408f3214501f0e3d273b4cdcfb9ff564806382937c0f02d8874899dd8c115bee8212943cc9e575e66cf3abb4d0c8630
+  languageName: node
+  linkType: hard
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -1574,6 +1590,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "rshb-game@workspace:."
   dependencies:
+    "@fancyapps/fancybox": ^3.5.7
+    "@fancyapps/ui": ^5.0.20
     "@trivago/prettier-plugin-sort-imports": ^4.1.1
     "@types/node": 20.4.2
     "@types/react": 18.2.15
