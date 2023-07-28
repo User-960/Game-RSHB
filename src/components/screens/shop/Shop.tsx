@@ -163,7 +163,7 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 					<div
 						className={cn(styles.card, {
 							[styles.selectedCard]: isSecondSelected,
-							[styles.blockedCard]: wallet === 2000 ? false : true
+							[styles.blockedCard]: wallet >= 2000 ? false : true
 						})}
 					>
 						<div className={styles.image}>
@@ -202,7 +202,7 @@ const Shop: FC<IShopProps> = ({ onClick }) => {
 					<div
 						className={cn(styles.card, {
 							[styles.selectedCard]: isThirdSelected,
-							[styles.blockedCard]: wallet === 2000 ? false : true
+							[styles.blockedCard]: wallet >= 3000 ? false : true
 						})}
 					>
 						<div className={styles.image}>
