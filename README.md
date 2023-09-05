@@ -1,21 +1,21 @@
 # RSHB-Game
 
-The main purpose of the project is to write the project on stack: React, TypeScript, Next.js. The project itself is a 2D game for young entrepreneurs.
+The main purpose of the project is to write the project on stack: React, TypeScript, Next.js. The project itself is an MVP game.
 
 ### Project Opportunities
 
-The meaning of the game is that an entrepreneur goes through mini-games and earns money.
+-
 
 ## What is used:
 
 - Programming languages: HTML, CSS, TypeScript;
 - Preprocessor: SCSS;
-- Libraries: React, Next.js, clsx, fancyapps;
+- Libraries: React, Next.js, CSS Modules, axios, clsx;
 
 ## To clone repository
 
 ```shell
-https://github.com/User-960/RSHB-Game.git
+https://github.com/User-960/Project-Scan-b2b.git
 ```
 
 ## Available Scripts
