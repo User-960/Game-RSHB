@@ -15,7 +15,7 @@ The main purpose of the project is to write the project on stack: React, TypeScr
 ## To clone repository
 
 ```shell
-https://github.com/User-960/Project-Scan-b2b.git
+https://github.com/User-960/RSHB-Game.git
 ```
 
 ## Available Scripts
